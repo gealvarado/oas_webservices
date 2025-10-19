@@ -4,6 +4,17 @@ This repository contains examples and sample code related to using [Oracle Analy
 
 All examples utilize [Zeep](https://docs.python-zeep.org/en/master/) as the SOAP client. Please consult the Zeep documentation if you have questions about how to use this library.
 
+First, create a Python virtual environment and then install `requirements.txt`.
+
+```bash
+pip install -r requirements.txt
+```
+
+THe WSDL for the Oracle Analytics Web Services is `http(s)://<host>:<port>/analytics-ws/saw.dll/wsdl/v12`.  Inspect the WDSL uzing Zeep, it is a good idea to save the output to a file:
+
+```bash
+python -mzeep http(s)://<host>:<port>/analytics-ws/saw.dll/wsdl/v12 > oas_ws.wsdl 
+```
 
 ## Disclaimer
 
