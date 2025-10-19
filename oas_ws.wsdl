@@ -1,0 +1,965 @@
+
+Prefixes:
+     xsd: http://www.w3.org/2001/XMLSchema
+     ns0: urn://oracle.bi.webservices/v12
+
+Global elements:
+     
+     ns0:addAnnotation(context: xsd:string, parentAnnotationID: xsd:string, subject: xsd:string, comment: xsd:string, sessionID: xsd:string)
+     ns0:addAnnotationResult(return: ns0:AnnotationStatus)
+     ns0:addFavorite(catalogObjectPath: xsd:string, categoryPath: xsd:string, sessionID: xsd:string)
+     ns0:addFavoriteCategory(categoryName: xsd:string, categoryPath: xsd:string, sessionID: xsd:string)
+     ns0:addFavoriteCategoryResult()
+     ns0:addFavoriteResult()
+     ns0:addInitiativeNode(scorecardID: xsd:string, initiativeNode: ns0:InitiativeNode, sessionID: xsd:string)
+     ns0:addInitiativeNodeResult(nodeID: xsd:string, node: ns0:InitiativeNode)
+     ns0:addPerspective(scorecardID: xsd:string, perspective: ns0:Perspective, sessionID: xsd:string)
+     ns0:addPerspectiveResult(perspectiveID: xsd:string, perspective: ns0:Perspective)
+     ns0:addReportToPage(pageID: xsd:string, reportID: xsd:string, report: ns0:ReportRef, reportViewName: xsd:string, reportParams: ns0:ReportParams, options: ns0:ReportHTMLOptions, sessionID: xsd:string)
+     ns0:addReportToPageResult()
+     ns0:addScorecardView(scorecardID: xsd:string, scorecardView: ns0:ScorecardView, overwrite: xsd:boolean, sessionID: xsd:string)
+     ns0:addScorecardViewResult(scorecardView: ns0:ScorecardView)
+     ns0:addStrategyNode(scorecardID: xsd:string, strategyNode: ns0:StrategyNode, sessionID: xsd:string)
+     ns0:addStrategyNodeResult(nodeID: xsd:string, node: ns0:StrategyNode)
+     ns0:applyReportDefaults(reportRefs: ns0:ReportRef, sessionID: xsd:string)
+     ns0:applyReportDefaultsResult(reportXml: xsd:string)
+     ns0:applyReportParams(reportRef: ns0:ReportRef, reportParams: ns0:ReportParams, encodeInString: xsd:boolean, sessionID: xsd:string)
+     ns0:applyReportParamsResult(return: None)
+     ns0:archiveTenant(tenantID: xsd:string[], useMtom: xsd:boolean, sessionID: xsd:string)
+     ns0:archiveTenantEx(archiveOptions: ns0:ArchiveOptions, useMtom: xsd:boolean, sessionID: xsd:string)
+     ns0:archiveTenantExResult(archive: xsd:base64Binary)
+     ns0:archiveTenantResult(archive: xsd:base64Binary)
+     ns0:cancelJob(jobID: xsd:integer, sessionID: xsd:string)
+     ns0:cancelJobInstance(jobReference: xsd:unsignedInt, jobInstanceReference: xsd:unsignedLong, sessionID: xsd:string)
+     ns0:cancelJobInstanceResult(cancelJobInstanceResponse: xsd:boolean)
+     ns0:cancelJobResult(jobInfo: ns0:JobInfo)
+     ns0:cancelKPIExecution(kpiExecutionID: xsd:string, sessionID: xsd:string)
+     ns0:cancelKPIExecutionResult(return: ns0:KPICancelationStatus)
+     ns0:cancelQuery(queryID: xsd:string, sessionID: xsd:string)
+     ns0:cancelQueryResult()
+     ns0:cancelScorecardAssessment(scorecardExecutionID: xsd:string, sessionID: xsd:string)
+     ns0:cancelScorecardAssessmentResult(return: ns0:ScorecardCancelationStatus)
+     ns0:clearQueryCache(sessionID: xsd:string)
+     ns0:clearQueryCacheResult(return: xsd:boolean)
+     ns0:clearRoleHierarchyCache(sessionID: xsd:string)
+     ns0:clearRoleHierarchyCacheResult()
+     ns0:closeScorecard(scorecardID: xsd:string, sessionID: xsd:string)
+     ns0:closeScorecardAssessment(scorecardExecutionID: xsd:string, sessionID: xsd:string)
+     ns0:closeScorecardAssessmentResult(return: ns0:ScorecardCloseStatus)
+     ns0:closeScorecardResult()
+     ns0:completeAnalysisExport(queryID: xsd:string, sessionID: xsd:string)
+     ns0:completeAnalysisExportResult(return: ns0:AnalysisExportResult)
+     ns0:copyItem(pathSrc: xsd:string, pathDest: xsd:string, flagACL: xsd:int, sessionID: xsd:string)
+     ns0:copyItem2(path: xsd:string[], recursive: xsd:boolean, permissions: xsd:boolean, timestamps: xsd:boolean, useMtom: xsd:boolean, skipPath: xsd:string[], options: ns0:CopyItem2Params, sessionID: xsd:string)
+     ns0:copyItem2Result(archive: xsd:base64Binary)
+     ns0:copyItemResult()
+     ns0:createFolder(path: xsd:string, createIfNotExists: xsd:boolean, createIntermediateDirs: xsd:boolean, sessionID: xsd:string)
+     ns0:createFolderResult()
+     ns0:createLink(path: xsd:string, pathTarget: xsd:string, overwriteIfExists: xsd:boolean, sessionID: xsd:string)
+     ns0:createLinkResult()
+     ns0:createScorecard(name: xsd:string, description: xsd:string, path: xsd:string, rootNodeName: xsd:string, useDefaultPerspectives: xsd:boolean, sessionID: xsd:string)
+     ns0:createScorecardResult(scorecardID: xsd:string)
+     ns0:deleteCSPWhitelist(sessionID: xsd:string)
+     ns0:deleteCSPWhitelistResult()
+     ns0:deleteFavorite(catalogObjectPath: xsd:string, categoryPath: xsd:string, sessionID: xsd:string)
+     ns0:deleteFavoriteCategory(categoryPath: xsd:string, sessionID: xsd:string)
+     ns0:deleteFavoriteCategoryResult()
+     ns0:deleteFavoriteResult()
+     ns0:deleteIBot(path: xsd:string, sessionID: xsd:string)
+     ns0:deleteIBotResult()
+     ns0:deleteInitiativeNode(scorecardID: xsd:string, nodeID: xsd:string, removeLinkedObject: xsd:boolean, recursive: xsd:boolean, sessionID: xsd:string)
+     ns0:deleteInitiativeNodeResult(nodeID: xsd:string)
+     ns0:deleteItem(path: xsd:string, sessionID: xsd:string)
+     ns0:deleteItemResult()
+     ns0:deletePerspective(scorecardID: xsd:string, perspectiveID: xsd:string, sessionID: xsd:string)
+     ns0:deletePerspectiveResult()
+     ns0:deleteResultSet(targetLevel: xsd:string, GUIDs: ns0:arrayOfGUIDs, segmentPath: xsd:string, sessionID: xsd:string)
+     ns0:deleteResultSetResult(jobInfo: ns0:JobInfo)
+     ns0:deleteScorecardView(scorecardID: xsd:string, path: xsd:string, sessionID: xsd:string)
+     ns0:deleteScorecardViewResult()
+     ns0:deleteService(sessionID: xsd:string)
+     ns0:deleteServiceResult(agentsDeleted: xsd:unsignedInt)
+     ns0:deleteStrategyNode(scorecardID: xsd:string, nodeID: xsd:string, removeLinkedObject: xsd:boolean, recursive: xsd:boolean, sessionID: xsd:string)
+     ns0:deleteStrategyNodeResult(nodeID: xsd:string)
+     ns0:describeColumn(subjectAreaName: xsd:string, tableName: xsd:string, columnName: xsd:string, sessionID: xsd:string)
+     ns0:describeColumnResult(column: ns0:SAColumn)
+     ns0:describeSubjectArea(subjectAreaName: xsd:string, detailsLevel: ns0:SASubjectAreaDetails, sessionID: xsd:string)
+     ns0:describeSubjectAreaResult(subjectArea: ns0:SASubjectArea)
+     ns0:describeSubjectAreaWithSort(subjectAreaName: xsd:string, detailsLevel: ns0:SASubjectAreaDetails, sortOrder: xsd:string, sortOrderCaseSensitive: xsd:string, sessionID: xsd:string)
+     ns0:describeTable(subjectAreaName: xsd:string, tableName: xsd:string, detailsLevel: ns0:SATableDetails, sessionID: xsd:string)
+     ns0:describeTableResult(table: ns0:SATable)
+     ns0:describeTableWithSort(subjectAreaName: xsd:string, tableName: xsd:string, detailsLevel: ns0:SATableDetails, sortOrder: xsd:string, sortOrderCaseSensitive: xsd:string, sessionID: xsd:string)
+     ns0:editScorecard(scorecardID: xsd:string, edit: xsd:boolean, sessionID: xsd:string)
+     ns0:editScorecardResult()
+     ns0:enableIBot(path: xsd:string, enable: xsd:boolean, sessionID: xsd:string)
+     ns0:enableIBotResult(jobID: xsd:int)
+     ns0:endPage(pageID: xsd:string, sessionID: xsd:string)
+     ns0:endPageResult()
+     ns0:evaluateCondition(path: xsd:string, reportCustomizationParameters: xsd:string[], sessionID: xsd:string)
+     ns0:evaluateConditionResult(conditionIsTrue: xsd:boolean)
+     ns0:evaluateInlineCondition(conditionXML: xsd:string, reportCustomizationParameters: xsd:string[], sessionID: xsd:string)
+     ns0:evaluateInlineConditionResult(conditionIsTrue: xsd:boolean)
+     ns0:executeBulkDataAnalysisExport(report: ns0:ReportRef, outputFormat: ns0:BulkDataExportOutputFormat, executionOptions: ns0:BulkDataExportExecutionOptions, reportParams: ns0:ReportParams, sessionID: xsd:string)
+     ns0:executeBulkDataAnalysisExportResult(return: ns0:BulkDataExportResult)
+     ns0:executeBulkDataSQLExport(sql: xsd:string, outputFormat: ns0:BulkDataExportOutputFormat, executionOptions: ns0:BulkDataExportExecutionOptions, sessionID: xsd:string)
+     ns0:executeBulkDataSQLExportResult(return: ns0:BulkDataExportResult)
+     ns0:executeIBotNow(path: xsd:string, sessionID: xsd:string)
+     ns0:executeIBotNowResult()
+     ns0:executeKPI(executionOptions: ns0:KPIExecutionOptions, kpiRequestList: ns0:KPIRequestList, kpiColumnList: ns0:KPIColumnList, kpiVariableList: ns0:KPIVariableList, sessionID: xsd:string)
+     ns0:executeKPIDimensionLOVQuery(rowsPerFetch: xsd:integer, kpiPath: xsd:string, dimensionID: xsd:string, sessionID: xsd:string)
+     ns0:executeKPIDimensionLOVQueryResult(return: ns0:KPIDimensionLOVExecutionStatus)
+     ns0:executeKPIResult(return: ns0:KPIExecutionStatus)
+     ns0:executeSQLQuery(sql: xsd:string, outputFormat: ns0:XMLQueryOutputFormat, executionOptions: ns0:XMLQueryExecutionOptions, sessionID: xsd:string)
+     ns0:executeSQLQueryResult(return: ns0:QueryResults)
+     ns0:executeScorecard(executionOptions: ns0:ScorecardExecutionOptions, scorecardPath: xsd:string, nodeList: ns0:ScorecardNodeList, variableList: ns0:ScorecardVariableList, kpiColumnList: ns0:KPIColumnList, sessionID: xsd:string)
+     ns0:executeScorecardResult(return: ns0:ScorecardExecutionStatus)
+     ns0:executeXMLQuery(report: ns0:ReportRef, outputFormat: ns0:XMLQueryOutputFormat, executionOptions: ns0:XMLQueryExecutionOptions, reportParams: ns0:ReportParams, sessionID: xsd:string)
+     ns0:executeXMLQueryResult(return: ns0:QueryResults)
+     ns0:export(filename: xsd:string, filter: ns0:CatalogItemsFilter, flag: ns0:ExportFlags, exportSecurity: xsd:boolean, sessionID: xsd:string)
+     ns0:exportResult()
+     ns0:exportService(exportFile: xsd:string, sessionID: xsd:string)
+     ns0:exportServiceResult(agentsExported: xsd:unsignedInt)
+     ns0:fetchKPIAssessment(kpiExecutionID: xsd:string, sessionID: xsd:string)
+     ns0:fetchKPIAssessmentResult(return: ns0:KPIExecutionStatus)
+     ns0:fetchNext(queryID: xsd:string, sessionID: xsd:string)
+     ns0:fetchNextBulkData(queryID: xsd:string, maxRowsPerPage: xsd:int, sessionID: xsd:string)
+     ns0:fetchNextBulkDataResult(return: ns0:BulkDataExportResult)
+     ns0:fetchNextKPIDimensionLOV(kpiLOVExecutionID: xsd:string, sessionID: xsd:string)
+     ns0:fetchNextKPIDimensionLOVResult(return: ns0:KPIDimensionLOVExecutionStatus)
+     ns0:fetchNextResult(return: ns0:QueryResults)
+     ns0:fetchScorecardAssessment(scorecardExecutionID: xsd:string, sessionID: xsd:string)
+     ns0:fetchScorecardAssessmentResult(return: ns0:ScorecardExecutionStatus)
+     ns0:forgetAccounts(account: ns0:Account[], cleanuplevel: xsd:int, sessionID: xsd:string)
+     ns0:forgetAccountsEx(forgetAccountsList: ns0:ForgetAccount[], sessionID: xsd:string)
+     ns0:forgetAccountsExResult(accountsStatus: ns0:ForgetAccountsStatus)
+     ns0:forgetAccountsResult()
+     ns0:generateDrillTo(kpiRequest: ns0:KPIRequest, kpiColumnList: ns0:KPIColumnList, kpiVariableList: ns0:KPIVariableList, reportPath: xsd:string, sessionID: xsd:string)
+     ns0:generateDrillToResult(return: ns0:KPIGenerateDrillToStatus)
+     ns0:generateKPIDrillTo(scorecardPath: xsd:string, nodeID: xsd:string, nodeType: xsd:string, reportPath: xsd:string, variableList: ns0:ScorecardVariableList, kpiColumnList: ns0:KPIColumnList, isDrillTo: xsd:boolean, sessionID: xsd:string)
+     ns0:generateKPIDrillToResult(return: ns0:ScorecardGenerateDrillToStatus)
+     ns0:generateReportSQL(reportRef: ns0:ReportRef, reportParams: ns0:ReportParams, sessionID: xsd:string)
+     ns0:generateReportSQLResult(return: xsd:string)
+     ns0:getAccountTenantID(account: ns0:Account, sessionID: xsd:string)
+     ns0:getAccountTenantIDResult(return: xsd:string)
+     ns0:getAccounts(account: ns0:Account[], sessionID: xsd:string)
+     ns0:getAccountsResult(accountDetails: ns0:Account[])
+     ns0:getAgentPaths(userID: xsd:string, sessionID: xsd:string)
+     ns0:getAgentPathsResult(agentPath: xsd:string[])
+     ns0:getAgents(agentPath: xsd:string[], sessionID: xsd:string)
+     ns0:getAgentsResult(agent: ns0:Agent[], agentError: ns0:AgentError[])
+     ns0:getAnnotations(context: xsd:string, overridesOnly: xsd:boolean, sessionID: xsd:string)
+     ns0:getAnnotationsResult(return: ns0:AnnotationStatus)
+     ns0:getBIPSVariables(names: xsd:string[], sessionID: xsd:string)
+     ns0:getBIPSVariablesResult(return: xsd:string[])
+     ns0:getCSPDefaultAllowList(sessionID: xsd:string)
+     ns0:getCSPDefaultAllowListResult(resultCSPHeader: xsd:string)
+     ns0:getCSPWhitelist(sessionID: xsd:string)
+     ns0:getCSPWhitelistResult(resultXml: xsd:string)
+     ns0:getCommonBodyHtml(pageID: xsd:string, sessionID: xsd:string)
+     ns0:getCommonBodyHtmlResult(return: xsd:string)
+     ns0:getConditionCustomizableReportElements(path: xsd:string, sessionID: xsd:string)
+     ns0:getConditionCustomizableReportElementsResult(customizableElement: xsd:string[])
+     ns0:getCounts(segmentPath: xsd:string, treePath: xsd:string, segmentationOptions: ns0:SegmentationOptions, sessionID: xsd:string)
+     ns0:getCountsResult(jobInfo: ns0:JobInfo)
+     ns0:getCurUser(sessionID: xsd:string)
+     ns0:getCurUserResult(return: xsd:string)
+     ns0:getFavorites(categoryPath: xsd:string, recursive: xsd:boolean, categoriesOnly: xsd:boolean, sessionID: xsd:string)
+     ns0:getFavoritesResult(favoriteItem: ns0:FavoriteItem[])
+     ns0:getGlobalPrivilegeACL(privilegeName: xsd:string, sessionID: xsd:string)
+     ns0:getGlobalPrivilegeACLResult(acl: ns0:ACL)
+     ns0:getGlobalPrivileges(sessionID: xsd:string)
+     ns0:getGlobalPrivilegesResult(sawPrivileges: ns0:Privilege[])
+     ns0:getGroups(member: ns0:Account[], expandGroups: xsd:boolean, sessionID: xsd:string)
+     ns0:getGroupsResult(account: ns0:Account[])
+     ns0:getHeadersHtml(pageID: xsd:string, sessionID: xsd:string)
+     ns0:getHeadersHtmlResult(return: xsd:string)
+     ns0:getHtmlForPageWithOneReport(reportID: xsd:string, report: ns0:ReportRef, reportViewName: xsd:string, reportParams: ns0:ReportParams, reportOptions: ns0:ReportHTMLOptions, pageParams: ns0:StartPageParams, sessionID: xsd:string)
+     ns0:getHtmlForPageWithOneReportResult(return: xsd:string)
+     ns0:getHtmlForReport(pageID: xsd:string, pageReportID: xsd:string, sessionID: xsd:string)
+     ns0:getHtmlForReportResult(return: xsd:string)
+     ns0:getIBotStatus(path: xsd:string, sessionID: xsd:string)
+     ns0:getIBotStatusResult(lastRun: xsd:string, nextRun: xsd:string, lastRunStatus: xsd:string, priority: xsd:string, agentEnabled: xsd:boolean, subscribed: xsd:boolean, specificRecipient: xsd:boolean)
+     ns0:getItemInfo(path: xsd:string, resolveLinks: xsd:boolean, sessionID: xsd:string)
+     ns0:getItemInfoResult(return: ns0:ItemInfo)
+     ns0:getJob(jobReference: xsd:unsignedInt, sessionID: xsd:string)
+     ns0:getJobInfo(jobID: xsd:integer, sessionID: xsd:string)
+     ns0:getJobInfoResult(jobInfo: ns0:JobInfo)
+     ns0:getJobInstance(jobReference: xsd:unsignedInt, jobInstanceReference: xsd:unsignedLong, sessionID: xsd:string)
+     ns0:getJobInstanceReferences(jobInstanceFilter: ns0:JobInstanceFilter, sessionID: xsd:string)
+     ns0:getJobInstanceReferencesResult(jobReferenceAndInstanceReferences: ns0:JobReferenceAndInstanceReferences[])
+     ns0:getJobInstanceResult(jobInstance: ns0:JobInstance)
+     ns0:getJobReferences(jobFilter: ns0:JobFilter, sessionID: xsd:string)
+     ns0:getJobReferencesResult(jobReference: xsd:unsignedInt[])
+     ns0:getJobResult(job: ns0:Job)
+     ns0:getKPIContributionWheelDimensions(kpiContributionWheelPath: xsd:string, kpiContributionWheelXML: xsd:string, sessionID: xsd:string)
+     ns0:getKPIContributionWheelDimensionsResult(return: ns0:KPIDimensionReferences)
+     ns0:getKPIWatchlistDimensions(kpiWatchlistPath: xsd:string, kpiWatchlistXML: xsd:string, sessionID: xsd:string)
+     ns0:getKPIWatchlistDimensionsResult(return: ns0:KPIDimensionReferences)
+     ns0:getMaintenanceMode(sessionID: xsd:string)
+     ns0:getMaintenanceModeResult(return: xsd:boolean)
+     ns0:getMembers(group: ns0:Account[], expandGroups: xsd:boolean, sessionID: xsd:string)
+     ns0:getMembersResult(account: ns0:Account[])
+     ns0:getMostRecents(listType: xsd:unsignedShort, sessionID: xsd:string)
+     ns0:getMostRecentsResult(listItem: ns0:MRUItem[])
+     ns0:getObjectCategories(sessionID: xsd:string)
+     ns0:getObjectCategoriesResult(objectCategory: ns0:ObjectCategory[])
+     ns0:getObjectCreateList(sessionID: xsd:string)
+     ns0:getObjectCreateListResult(objectGroup: ns0:ObjectGroup[])
+     ns0:getObjectTypes(sessionID: xsd:string)
+     ns0:getObjectTypesResult(objectTypes: ns0:ObjectTypes[])
+     ns0:getPermissions(acls: ns0:ACL[], account: ns0:Account, sessionID: xsd:string)
+     ns0:getPermissionsEx(acls: ns0:ACL[], account: ns0:Account, owner: ns0:Account, creator: ns0:Account, sessionID: xsd:string)
+     ns0:getPermissionsExResult(return: xsd:int[])
+     ns0:getPermissionsResult(return: xsd:int[])
+     ns0:getPrivilegesStatus(privileges: xsd:string[], sessionID: xsd:string)
+     ns0:getPrivilegesStatusResult(return: xsd:boolean[])
+     ns0:getPromptElements(promptRef: ns0:ReportRef, viewState: xsd:string, viewID: xsd:string, portalPath: xsd:string, page: xsd:string, optionalParams: ns0:NameValuePair[], sessionID: xsd:string)
+     ns0:getPromptElementsResult(promptsObj: ns0:PromptsObjectModel)
+     ns0:getPromptedColumns(segmentPath: xsd:string, treePath: xsd:string, sessionID: xsd:string)
+     ns0:getPromptedColumnsResult(ColumnInfo: ns0:PromptedColumnInfo)
+     ns0:getPromptedFilters(report: ns0:ReportRef, sessionID: xsd:string)
+     ns0:getPromptedFiltersResult(promptedFilter: xsd:string[])
+     ns0:getRelatedSubjectAreas(subjectAreaName: xsd:string, includeXSAs: xsd:boolean, sessionID: xsd:string)
+     ns0:getRelatedSubjectAreasResult(subjectArea: ns0:SASubjectArea[])
+     ns0:getReportColumns(reportRef: ns0:ReportRef, sessionID: xsd:string)
+     ns0:getReportColumnsResult(columns: ns0:ReportColumn[])
+     ns0:getReportElements(path: xsd:string, sessionID: xsd:string)
+     ns0:getReportElementsResult(parameterADF: ns0:ReportADFParameters)
+     ns0:getScorecardDetails(scorecardID: xsd:string, details: xsd:int, options: ns0:ScorecardDetailsOptions, sessionID: xsd:string)
+     ns0:getScorecardDetailsResult(scorecardSettings: ns0:ScorecardSettings, perspectives: ns0:PerspectiveList, strategyNodes: ns0:StrategyNodeList, initiativeNodes: ns0:InitiativeNodeList, causeEffectLinkages: ns0:CauseAndEffectLinkages, viewDocuments: ns0:ScorecardViewDocuments)
+     ns0:getScorecardKPIDimensions(scorecardPath: xsd:string, getFresh: xsd:boolean, sessionID: xsd:string)
+     ns0:getScorecardKPIDimensionsResult(return: ns0:ScorecardDimensionReferences)
+     ns0:getScorecardViewDimensions(type: ns0:ScorecardViewType, scorecardViewPath: xsd:string, scorecardViewXML: xsd:string, sessionID: xsd:string)
+     ns0:getScorecardViewDimensionsResult(return: ns0:ScorecardDimensionReferences)
+     ns0:getSessionEnvironment(sessionID: xsd:string)
+     ns0:getSessionEnvironmentResult(return: ns0:SessionEnvironment)
+     ns0:getSessionVariables(names: xsd:string[], sessionID: xsd:string)
+     ns0:getSessionVariablesResult(return: xsd:string[])
+     ns0:getSubItems(path: xsd:string, mask: xsd:string, resolveLinks: xsd:boolean, options: ns0:GetSubItemsParams, sessionID: xsd:string)
+     ns0:getSubItemsResult(itemInfo: ns0:ItemInfo[])
+     ns0:getSubjectAreas(sessionID: xsd:string)
+     ns0:getSubjectAreasResult(subjectArea: ns0:SASubjectArea[])
+     ns0:getSubjectAreasWithSort(sortOrder: xsd:string, sortOrderCaseSensitive: xsd:string, sessionID: xsd:string)
+     ns0:getUnarchiveJobState(jobID: xsd:string, sessionID: xsd:string)
+     ns0:getUnarchiveJobStateResult(unarchiveJobState: ns0:UnarchiveJobState)
+     ns0:getUserHomeDirPath(username: xsd:string, sessionID: xsd:string)
+     ns0:getUserHomeDirPathResult(path: xsd:string)
+     ns0:impersonate(name: xsd:string, password: xsd:string, impersonateID: xsd:string)
+     ns0:impersonateResult(sessionID: xsd:string)
+     ns0:impersonateex(name: xsd:string, password: xsd:string, impersonateID: xsd:string, sessionparams: ns0:SAWSessionParameters)
+     ns0:impersonateexResult(return: ns0:AuthResult)
+     ns0:import(filename: xsd:string, flag: ns0:ImportFlags, lastPurgedLog: xsd:dateTime, updateReplicationLog: xsd:boolean, returnErrors: xsd:boolean, filter: ns0:CatalogItemsFilter, pathMap: ns0:PathMap, sessionID: xsd:string)
+     ns0:importResult(error: ns0:ImportError[])
+     ns0:importService(importFile: xsd:string, sessionID: xsd:string)
+     ns0:importServiceResult(agentsImported: xsd:unsignedInt, agentsDeleted: xsd:unsignedInt)
+     ns0:initiateAnalysisExport(report: ns0:ReportRef, outputFormat: ns0:AnalysisExportOutputFormat, executionOptions: ns0:AnalysisExportExecutionOptions, reportParams: ns0:ReportParams, reportViewName: xsd:string, sessionID: xsd:string)
+     ns0:initiateAnalysisExportResult(return: ns0:AnalysisExportResult)
+     ns0:isMember(group: ns0:Account[], member: ns0:Account[], expandGroups: xsd:boolean, sessionID: xsd:string)
+     ns0:isMemberResult(return: xsd:boolean)
+     ns0:joinGroups(group: ns0:Account[], member: ns0:Account[], sessionID: xsd:string)
+     ns0:joinGroupsResult()
+     ns0:keepAlive(sessionID: xsd:string[])
+     ns0:keepAliveResult()
+     ns0:leaveGroups(group: ns0:Account[], member: ns0:Account[], sessionID: xsd:string)
+     ns0:leaveGroupsResult()
+     ns0:logoff(sessionID: xsd:string)
+     ns0:logoffResult()
+     ns0:logon(name: xsd:string, password: xsd:string)
+     ns0:logonResult(sessionID: xsd:string)
+     ns0:logonex(name: xsd:string, password: xsd:string, sessionparams: ns0:SAWSessionParameters)
+     ns0:logonexResult(return: ns0:AuthResult)
+     ns0:logonmt(name: xsd:string, password: xsd:string, tenantguid: xsd:string, servicename: xsd:string)
+     ns0:logonmtResult(sessionID: xsd:string)
+     ns0:maintenanceMode(flag: xsd:boolean, sessionID: xsd:string)
+     ns0:maintenanceModeResult()
+     ns0:markForReplication(item: xsd:string, replicate: xsd:boolean, sessionID: xsd:string)
+     ns0:markForReplicationResult()
+     ns0:moveIBot(fromPath: xsd:string, toPath: xsd:string, resolveLinks: xsd:boolean, allowOverwrite: xsd:boolean, sessionID: xsd:string)
+     ns0:moveIBotResult()
+     ns0:moveInitiativeNode(scorecardID: xsd:string, nodeToBeMovedGuid: xsd:string, referenceNodeGuid: xsd:string, operation: ns0:ScorecardMoveOperationType, sessionID: xsd:string)
+     ns0:moveInitiativeNodeResult(initiativeNodes: ns0:InitiativeNodeList)
+     ns0:moveItem(pathSrc: xsd:string, pathDest: xsd:string, flagACL: xsd:int, sessionID: xsd:string)
+     ns0:moveItemResult()
+     ns0:moveStrategyNode(scorecardID: xsd:string, nodeToBeMovedGuid: xsd:string, referenceNodeGuid: xsd:string, operation: ns0:ScorecardMoveOperationType, sessionID: xsd:string)
+     ns0:moveStrategyNodeResult(strategyNodes: ns0:StrategyNodeList)
+     ns0:openScorecard(path: xsd:string, readWrite: xsd:boolean, sessionID: xsd:string)
+     ns0:openScorecardResult(scorecardID: xsd:string)
+     ns0:openTreeNode(scorecardID: xsd:string, nodeID: xsd:string, type: xsd:string, sessionID: xsd:string)
+     ns0:openTreeNodeResult(({nodeStrategy: ns0:StrategyNode} | {nodeInitiative: ns0:InitiativeNode}))
+     ns0:overrideAssessment(context: xsd:string, originalNormalizedAssessmentResult: xsd:double, overriddenNormalizedAssessmentResult: xsd:double, subject: xsd:string, comment: xsd:string, sessionID: xsd:string)
+     ns0:overrideAssessmentResult(return: ns0:AssessmentOverrideStatus)
+     ns0:pasteItem2(archive: xsd:base64Binary, replacePath: xsd:string, flagACL: xsd:int, flagOverwrite: xsd:int, flagReplaceReferences: xsd:int, options: ns0:PasteItem2Params, sessionID: xsd:string)
+     ns0:pasteItem2Result()
+     ns0:prepareCache(segmentPath: xsd:string, treePath: xsd:string, refresh: xsd:boolean, sessionID: xsd:string)
+     ns0:prepareCacheResult(jobInfo: ns0:JobInfo)
+     ns0:provisionServiceInstance(serviceInstanceConfigParams: ns0:ServiceInstanceConfigParams[], sessionID: xsd:string)
+     ns0:provisionServiceInstanceResult()
+     ns0:provisionTenant(tenantID: xsd:string[], sessionID: xsd:string)
+     ns0:provisionTenantResult()
+     ns0:purgeAlerts(maxAgeSecs: xsd:unsignedInt, userGlob: xsd:string, sessionID: xsd:string)
+     ns0:purgeAlertsResult(alertsPurged: xsd:unsignedInt, usersVisited: xsd:unsignedInt, leakedContentPurged: xsd:unsignedInt, alertsRemaining: xsd:unsignedInt, errors: xsd:unsignedInt)
+     ns0:purgeCache(segmentPath: xsd:string, treePath: xsd:string, ignoreCacheRef: xsd:boolean, sessionID: xsd:string)
+     ns0:purgeCacheResult(jobInfo: ns0:JobInfo)
+     ns0:purgeJobInstances(purgeJobInstancesFilter: ns0:PurgeJobInstancesFilter, sessionID: xsd:string)
+     ns0:purgeJobInstancesResult()
+     ns0:purgeLog(items: xsd:string[], timestamp: xsd:dateTime, sessionID: xsd:string)
+     ns0:purgeLogResult()
+     ns0:readObjects(paths: xsd:string[], resolveLinks: xsd:boolean, errorMode: ns0:ErrorDetailsLevel, returnOptions: ns0:ReadObjectsReturnOptions, sessionID: xsd:string)
+     ns0:readObjectsResult(catalogObject: ns0:CatalogObject[])
+     ns0:reloadLogConfiguration(logLevel: ns0:LogReloadLevel, domain: ns0:LogReloadDomain, id: xsd:string, sessionID: xsd:string)
+     ns0:reloadLogConfigurationResult()
+     ns0:reloadMetadata(sessionID: xsd:string)
+     ns0:reloadMetadataResult(return: xsd:boolean)
+     ns0:removeFolder(path: xsd:string, recursive: xsd:boolean, sessionID: xsd:string)
+     ns0:removeFolderResult()
+     ns0:removeJobs(jobReference: xsd:unsignedInt[], sessionID: xsd:string)
+     ns0:removeJobsResult(numberJobsRemoved: xsd:unsignedInt)
+     ns0:renameAccounts(from: ns0:Account[], to: ns0:Account[], sessionID: xsd:string)
+     ns0:renameAccountsEx(renameAccountsList: ns0:RenameAccount[], sessionID: xsd:string)
+     ns0:renameAccountsExResult(accountsStatus: ns0:RenameAccountsStatus)
+     ns0:renameAccountsResult()
+     ns0:resetService(deleteHistory: xsd:boolean, jobState: ns0:JobState, sessionID: xsd:string)
+     ns0:resetServiceResult()
+     ns0:restoreTenant(archive: xsd:base64Binary, tenantID: xsd:string[], sessionID: xsd:string)
+     ns0:restoreTenantEx(archive: xsd:base64Binary, restoreOptions: ns0:RestoreOptions, sessionID: xsd:string)
+     ns0:restoreTenantExResult()
+     ns0:restoreTenantResult()
+     ns0:resumeJobs(jobReference: xsd:unsignedInt[], sessionID: xsd:string)
+     ns0:resumeJobsResult(succeeded: ns0:JobReferences, failed: ns0:JobReferenceErrors)
+     ns0:resumeService(catchUp: xsd:boolean, sessionID: xsd:string)
+     ns0:resumeServiceResult()
+     ns0:saveResultSet(segmentPath: xsd:string, treeNodePath: ns0:TreeNodePath, savedSegmentPath: xsd:string, segmentationOptions: ns0:SegmentationOptions, SRCustomLabel: xsd:string, appendStaticSegment: xsd:boolean, sessionID: xsd:string)
+     ns0:saveResultSetResult(jobInfo: ns0:JobInfo)
+     ns0:sendMessage(recipient: xsd:string[], group: xsd:string[], subject: xsd:string, body: xsd:string, priority: xsd:string, sessionID: xsd:string)
+     ns0:sendMessageResult(status: xsd:string)
+     ns0:setBridge(bridge: xsd:string, sessionID: xsd:string)
+     ns0:setBridgeResult()
+     ns0:setConsecutiveFailureLimit(consecutiveFailureLimit: xsd:unsignedInt, sessionID: xsd:string)
+     ns0:setConsecutiveFailureLimitResult()
+     ns0:setItemAttributes(path: xsd:string[], value: xsd:int, valueOff: xsd:int, recursive: xsd:boolean, sessionID: xsd:string)
+     ns0:setItemAttributesResult()
+     ns0:setItemProperty(path: xsd:string[], lastModified: xsd:dateTime[], name: xsd:string[], value: xsd:string[], recursive: xsd:boolean, sessionID: xsd:string)
+     ns0:setItemPropertyResult()
+     ns0:setOwnership(path: xsd:string[], owner: ns0:Account, recursive: xsd:boolean, sessionID: xsd:string)
+     ns0:setOwnershipResult()
+     ns0:startPage(options: ns0:StartPageParams, sessionID: xsd:string)
+     ns0:startPageResult(return: xsd:string)
+     ns0:subscribe(path: xsd:string, customizationXml: xsd:string, sessionID: xsd:string)
+     ns0:subscribeResult()
+     ns0:suspendJobs(jobReference: xsd:unsignedInt[], sessionID: xsd:string)
+     ns0:suspendJobsResult(succeeded: ns0:JobReferences, failed: ns0:JobReferenceErrors)
+     ns0:suspendService(timeoutSecs: xsd:unsignedInt, sessionID: xsd:string)
+     ns0:suspendServiceResult()
+     ns0:unarchive(archive: xsd:base64Binary, replacePath: xsd:string, flagACL: xsd:int, flagOverwrite: xsd:int, flagReplaceReferences: xsd:int, options: ns0:UnarchiveParams, sessionID: xsd:string)
+     ns0:unarchiveResult(unarchiveJobState: ns0:UnarchiveJobState)
+     ns0:unarchiveTenant(archive: xsd:base64Binary, tenantID: xsd:string[], sessionID: xsd:string)
+     ns0:unarchiveTenantResult()
+     ns0:unprovisionServiceInstance(serviceInstanceID: xsd:string[], sessionID: xsd:string)
+     ns0:unprovisionServiceInstanceResult()
+     ns0:unprovisionTenant(tenantID: xsd:string[], sessionID: xsd:string)
+     ns0:unprovisionTenantResult()
+     ns0:unsubscribe(path: xsd:string, sessionID: xsd:string)
+     ns0:unsubscribeResult()
+     ns0:updateCSPWhitelist(cspWhitelistXml: xsd:string, sessionID: xsd:string)
+     ns0:updateCSPWhitelistResult()
+     ns0:updateCatalogItemACL(path: xsd:string[], acl: ns0:ACL, options: ns0:UpdateCatalogItemACLParams, sessionID: xsd:string)
+     ns0:updateCatalogItemACLResult()
+     ns0:updateCauseAndEffectLinkages(scorecardID: xsd:string, causeEffectLinkages: ns0:CauseAndEffectLinkages, sessionID: xsd:string)
+     ns0:updateCauseAndEffectLinkagesResult(causeEffectLinkages: ns0:CauseAndEffectLinkages, failedUpdates: ns0:CauseAndEffectLinkagesUpdateFailures)
+     ns0:updateFavorites(favoriteItem: ns0:FavoriteItem[], sessionID: xsd:string)
+     ns0:updateFavoritesResult()
+     ns0:updateGlobalPrivilegeACL(privilegeName: xsd:string, acl: ns0:ACL, updateACLParams: ns0:UpdateACLParams, sessionID: xsd:string)
+     ns0:updateGlobalPrivilegeACLResult()
+     ns0:updateInitiativeNode(scorecardID: xsd:string, initiativeNode: ns0:InitiativeNode, sessionID: xsd:string)
+     ns0:updateInitiativeNodeResult(node: ns0:InitiativeNode)
+     ns0:updateMostRecents(catalogObjectPath: xsd:string, actionType: ns0:ActionType, sessionID: xsd:string)
+     ns0:updateMostRecentsResult()
+     ns0:updatePerspective(scorecardID: xsd:string, perspective: ns0:Perspective, sessionID: xsd:string)
+     ns0:updatePerspectiveResult(perspective: ns0:Perspective)
+     ns0:updateScorecardItemACL(scorecardID: xsd:string, type: ns0:ScorecardItemType, path: xsd:string, id: xsd:string, acl: ns0:ACL, options: ns0:UpdateCatalogItemACLParams, sessionID: xsd:string)
+     ns0:updateScorecardItemACLResult(updatedItem: ns0:UpdatedScorecardACLItem[])
+     ns0:updateScorecardSettings(scorecardID: xsd:string, scorecardSettings: ns0:ScorecardSettings, sessionID: xsd:string)
+     ns0:updateScorecardSettingsResult()
+     ns0:updateScorecardView(scorecardID: xsd:string, scorecardView: ns0:ScorecardView, sessionID: xsd:string)
+     ns0:updateScorecardViewResult(scorecardView: ns0:ScorecardView)
+     ns0:updateServiceInstance(serviceInstanceConfigParams: ns0:ServiceInstanceConfigParams, sessionID: xsd:string)
+     ns0:updateServiceInstanceResult()
+     ns0:updateStrategyNode(scorecardID: xsd:string, strategyNode: ns0:StrategyNode, sessionID: xsd:string)
+     ns0:updateStrategyNodeResult(node: ns0:StrategyNode)
+     ns0:upgradeXML(xml: xsd:string, sessionID: xsd:string)
+     ns0:upgradeXMLResult(return: xsd:string)
+     ns0:voidType()
+     ns0:writeIBot(obj: ns0:CatalogObject, path: xsd:string, resolveLinks: xsd:boolean, allowOverwrite: xsd:boolean, sessionID: xsd:string)
+     ns0:writeIBotResult(jobID: xsd:int)
+     ns0:writeListFiles(report: ns0:ReportRef, reportParams: ns0:ReportParams, segmentPath: xsd:string, treeNodePath: ns0:TreeNodePath, segmentationOptions: ns0:SegmentationOptions, filesystem: xsd:string, timeout: xsd:integer, sessionID: xsd:string)
+     ns0:writeListFilesResult(jobInfo: ns0:JobInfo)
+     ns0:writeObjects(catalogObjects: ns0:CatalogObject[], allowOverwrite: xsd:boolean, createIntermediateDirs: xsd:boolean, errorMode: ns0:ErrorDetailsLevel, sessionID: xsd:string)
+     ns0:writeObjectsResult(errorInfo: ns0:ErrorInfo[])
+
+Global types:
+     xsd:anyType
+     xsd:ENTITIES
+     xsd:ENTITY
+     xsd:ID
+     xsd:IDREF
+     xsd:IDREFS
+     xsd:NCName
+     xsd:NMTOKEN
+     xsd:NMTOKENS
+     xsd:NOTATION
+     xsd:Name
+     xsd:QName
+     xsd:anySimpleType
+     xsd:anyURI
+     xsd:base64Binary
+     xsd:boolean
+     xsd:byte
+     xsd:date
+     xsd:dateTime
+     xsd:decimal
+     xsd:double
+     xsd:duration
+     xsd:float
+     xsd:gDay
+     xsd:gMonth
+     xsd:gMonthDay
+     xsd:gYear
+     xsd:gYearMonth
+     xsd:hexBinary
+     xsd:int
+     xsd:integer
+     xsd:language
+     xsd:long
+     xsd:negativeInteger
+     xsd:nonNegativeInteger
+     xsd:nonPositiveInteger
+     xsd:normalizedString
+     xsd:positiveInteger
+     xsd:short
+     xsd:string
+     xsd:time
+     xsd:token
+     xsd:unsignedByte
+     xsd:unsignedInt
+     xsd:unsignedLong
+     xsd:unsignedShort
+     ns0:ACL(name: xsd:string, type: ns0:ACLType, guid: xsd:string, accessControlTokens: ns0:AccessControlToken[])
+     ns0:ACLOptionType
+     ns0:ACLType
+     ns0:ADFParameterValues(value: xsd:string[])
+     ns0:AccessControlToken(account: ns0:Account, permissionMask: xsd:int)
+     ns0:Account(name: xsd:string, accountType: xsd:int, guid: xsd:string, displayName: xsd:string)
+     ns0:ActionType
+     ns0:Agent(jobReference: xsd:unsignedInt, name: xsd:string, description: xsd:string, userID: xsd:string, scriptType: ns0:ScriptType, scriptID: xsd:string, agentType: ns0:AgentType, agentReportPath: xsd:string, maxRunTimeMS: xsd:unsignedInt, runningInstancesCount: xsd:unsignedShort, maxConcurrentInstances: xsd:unsignedShort, timeZone: xsd:string, lastRunDateTime: xsd:dateTime, nextRunDateTime: xsd:dateTime, beginDate: xsd:date, startTime: xsd:time, endDate: xsd:date, endTime: xsd:time, intervalMinutes: xsd:unsignedInt, disabled: xsd:boolean, suspended: xsd:boolean, deleteJobWhenDone: xsd:boolean, executeWhenMissed: xsd:boolean, jobTrigger: ns0:JobTrigger)
+     ns0:AgentError(agentPath: xsd:string, errorMessage: xsd:string)
+     ns0:AgentType
+     ns0:AggregationRule
+     ns0:AnalysisExportExecutionOptions(async: xsd:boolean, useMtom: xsd:boolean, refresh: xsd:boolean)
+     ns0:AnalysisExportOutputFormat
+     ns0:AnalysisExportResult(viewData: xsd:base64Binary, mimeType: xsd:string, queryID: xsd:string, exportStatus: ns0:ExportStatusType)
+     ns0:Annotation(annotationID: xsd:string, parentAnnotationID: xsd:string, context: xsd:string, user: xsd:string, entryTime: xsd:dateTime, subject: xsd:string, comment: xsd:string, entryTimeDisplay: xsd:string)
+     ns0:AnnotationStatus(context: xsd:string, success: xsd:boolean, annotationsList: ns0:AnnotationsList)
+     ns0:AnnotationsList(annotation: ns0:Annotation[])
+     ns0:ArchiveOptions(tenantsToArchive: ns0:TenantArchiveDetails[])
+     ns0:AssessmentMapping(assessmentStateKey: xsd:string, maxValue: xsd:float, statusText: xsd:string, icon: xsd:string, color: xsd:string)
+     ns0:AssessmentMappings(decimalPlaces: xsd:integer, assessmentMapping: ns0:AssessmentMapping[])
+     ns0:AssessmentOverrideStatus(context: xsd:string, success: xsd:boolean)
+     ns0:AssessmentRule(ruleType: ns0:AssessmentRuleType, tieBreaker: ns0:TieBreakerRuleType, weightedRule: ns0:WeightedRule)
+     ns0:AssessmentRuleType
+     ns0:AuthResult(sessionID: xsd:string, authCompleted: xsd:boolean, version: xsd:string)
+     ns0:BalanceInfo(financial: xsd:string, internalFacing: xsd:string, leading: xsd:string)
+     ns0:BulkDataExportExecutionOptions(async: xsd:boolean, refresh: xsd:boolean, maxRowsPerPage: xsd:int)
+     ns0:BulkDataExportOutputFormat
+     ns0:BulkDataExportResult(schema: xsd:base64Binary, data: xsd:base64Binary, mimeType: xsd:string, queryID: xsd:string, status: ns0:BulkDataExportStatusType)
+     ns0:BulkDataExportStatusType
+     ns0:CatalogItemsFilter(items: xsd:string[], from: xsd:dateTime, to: xsd:dateTime)
+     ns0:CatalogObject(catalogObject: xsd:string, catalogObjectBytes: xsd:base64Binary, itemInfo: ns0:ItemInfo, errorInfo: ns0:ErrorInfo)
+     ns0:CauseAndEffectLinkage(id: xsd:string, degreeStrength: xsd:string, interaction: xsd:string, causeRef: xsd:string, effectRef: xsd:string, operation: ns0:CauseAndEffectLinkageOperationType)
+     ns0:CauseAndEffectLinkageOperationType
+     ns0:CauseAndEffectLinkages(linkage: ns0:CauseAndEffectLinkage[])
+     ns0:CauseAndEffectLinkagesUpdateFailure(reason: xsd:string, linkage: ns0:CauseAndEffectLinkage)
+     ns0:CauseAndEffectLinkagesUpdateFailures(failure: ns0:CauseAndEffectLinkagesUpdateFailure[])
+     ns0:ContentStateType
+     ns0:CopyItem2Params(sourceApplication: xsd:string)
+     ns0:CreatableItem(signature: xsd:string, name: xsd:string, handlerID: xsd:string, newIcon: ns0:ObjectIcon, description: xsd:string, subType: xsd:string)
+     ns0:CustomAttributes(attribute: ns0:ObjectCustomAttribute[])
+     ns0:DailyTrigger(daysInterval: xsd:unsignedShort)
+     ns0:DayOfWeek
+     ns0:DimensionMapping(dimensionID: xsd:string, isMapped: xsd:boolean, isDefaulted: xsd:boolean, displayLabel: xsd:string, mappedToDimensionID: xsd:string, defaultValue: ns0:KPIDimensionValue)
+     ns0:DimensionMappings(dimensionMapping: ns0:DimensionMapping[])
+     ns0:ErrorDetailsLevel
+     ns0:ErrorInfo(code: xsd:string, context: xsd:string, message: xsd:string, details: xsd:string)
+     ns0:ExportFlags
+     ns0:ExportStatusType
+     ns0:FavoriteItem(name: xsd:string, path: xsd:string, type: xsd:unsignedShort, catalogPath: xsd:string, itemInfo: ns0:ItemInfo, favoriteItem: ns0:FavoriteItem[])
+     ns0:FileInfo(filepath: xsd:string, startTime: xsd:dateTime, endTime: xsd:dateTime, filesize: xsd:long, fileAttribs: ns0:NameValueArrayPair[])
+     ns0:ForgetAccount(accountName: xsd:string, accountType: xsd:int)
+     ns0:ForgetAccountResult(accountName: xsd:string, accountType: xsd:int, status: xsd:int)
+     ns0:ForgetAccountsStatus(status: xsd:int, accountsResult: ns0:ForgetAccountResult[])
+     ns0:GetSubItemsFilter(itemInfoFilters: ns0:NameValuePair[], dummy: xsd:string)
+     ns0:GetSubItemsParams(filter: ns0:GetSubItemsFilter, includeACL: xsd:boolean, withPermission: xsd:int, withPermissionMask: xsd:int, withAttributes: xsd:int, withAttributesMask: xsd:int, preserveOriginalLinkPath: xsd:boolean)
+     ns0:ImportError(item: xsd:string, operation: xsd:string, file: xsd:string, line: xsd:integer, catalogError: xsd:string)
+     ns0:ImportFlags
+     ns0:IndividualPromptObjectModel(label: xsd:string, description: xsd:string, type: xsd:string, subjectArea: xsd:string, placedOnNewColumn: xsd:boolean, required: xsd:boolean, formulaExprString: xsd:string, promptUIControlType: xsd:string, promptOperator: xsd:string, customWidthUsage: xsd:string, customWidthWidth: xsd:string, setPromptVariableType: xsd:string, setVariableName: xsd:string, limitedByInfo: ns0:IndividualPromptRunTimeInfoLimitedByInfo, runTimeInfo: ns0:IndividualPromptRunTimeInfo)
+     ns0:IndividualPromptRunTimeInfo(promptID: xsd:int, allowUserTypeValues: xsd:boolean, allowAutoComplete: xsd:boolean, multiSelect: xsd:boolean, showSearch: xsd:string, dataType: ns0:IndividualPromptRunTimeInfoDataType, currentValues: ns0:IndividualPromptRunTimeInfoCurrentValues, availableOptions: ns0:IndividualPromptRunTimeInfoAvailableOptions, attributes: ns0:IndividualPromptRunTimeInfoAdditionalAttributes)
+     ns0:IndividualPromptRunTimeInfoAdditionalAttributes(opMinNumValues: xsd:int, opMaxNumValues: xsd:int)
+     ns0:IndividualPromptRunTimeInfoAvailableOptions(numOptionsPerPage: xsd:int, currentPageInOptions: xsd:int, moreOptions: xsd:boolean, includeAllChoices: xsd:boolean, needToPopulateDropDown: xsd:boolean, valueTablePromptSourceType: xsd:string, sql: xsd:string, runTimeCodeAndDisplayValueFormatStr: xsd:string, filterXmlString: xsd:string, groupPaths: ns0:IndividualPromptRunTimeInfoValuesType, populatedOptions: ns0:IndividualPromptRunTimeInfoValuesType)
+     ns0:IndividualPromptRunTimeInfoCurrentValues(currentOperator: xsd:string, emptyAsAllChoices: xsd:boolean, values: ns0:IndividualPromptRunTimeInfoValuesType)
+     ns0:IndividualPromptRunTimeInfoDataType(subjectArea: xsd:string, displayColumnFormula: xsd:string, displayColumnCategory: xsd:string, displayColumnPrimaryType: xsd:string, displayColumnDBPrimaryType: xsd:string, isMeasureColumn: xsd:boolean, displayTimeZone: xsd:string, dataTimeZoneOffset: xsd:int, displayToDataOffset: xsd:int, promptSourceDataType: xsd:string, isHierarchy: xsd:boolean, hierarchyInfo: ns0:IndividualPromptRunTimeInfoDataTypeHierarchyInfo, isDoubleColumnInput: xsd:boolean, codeColumnInfo: ns0:IndividualPromptRunTimeInfoDataTypeDoubleColumnInfo)
+     ns0:IndividualPromptRunTimeInfoDataTypeDoubleColumnInfo(codeColumnFormula: xsd:string, codeColumnCategory: xsd:string, codeColumnPrimaryType: xsd:string, codeColumnDBPrimaryType: xsd:string, enableDoubleColumnInput: xsd:boolean, codeColumnLabel: xsd:string, selectedByCodeValue: xsd:boolean)
+     ns0:IndividualPromptRunTimeInfoDataTypeHierarchyFormulaLevels(subjectArea: xsd:string, dimensionID: xsd:string, tableName: xsd:string, hierarchyID: xsd:string, displayName: xsd:string, tableDisplayName: xsd:string, hierarchyDisplayName: xsd:string, sqlFormulaIn2Parts: xsd:string, sqlFormulaDisplaySubjectAreaPart: xsd:string, levels: ns0:IndividualPromptRunTimeInfoDataTypeHierarchyLevels)
+     ns0:IndividualPromptRunTimeInfoDataTypeHierarchyInfo(hierarchyID: xsd:string, dimensionID: xsd:string, tableName: xsd:string, formulaLevels: ns0:IndividualPromptRunTimeInfoDataTypeHierarchyFormulaLevels)
+     ns0:IndividualPromptRunTimeInfoDataTypeHierarchyLevelInfo(levelID: xsd:string, displayName: xsd:string, displayFormula: xsd:string, sqlFormula: xsd:string, isDoubleColumn: xsd:boolean, keyColumnInfo: ns0:IndividualPromptRunTimeInfoDataTypeHierarchyLevelSQLInfo, displayColumnInfo: ns0:IndividualPromptRunTimeInfoDataTypeHierarchyLevelSQLInfo)
+     ns0:IndividualPromptRunTimeInfoDataTypeHierarchyLevelSQLInfo(displayFormula: xsd:string, sqlFormula: xsd:string, dataType: xsd:string, category: xsd:string, primaryType: xsd:string, nullable: xsd:boolean, isMeasure: xsd:boolean, aggType: xsd:string, aggRule: xsd:string)
+     ns0:IndividualPromptRunTimeInfoDataTypeHierarchyLevels(levelInfo: ns0:IndividualPromptRunTimeInfoDataTypeHierarchyLevelInfo[])
+     ns0:IndividualPromptRunTimeInfoLimitedByInfo(limitedByType: xsd:string, isLimitedByNotApplied: xsd:boolean, specificPrompts: ns0:IndividualPromptRunTimeInfoLimitedByPromptRefGroups)
+     ns0:IndividualPromptRunTimeInfoLimitedByPromptRefGroups(limitByPrompt: ns0:IndividualPromptRunTimeInfoLimitedByPromptReference[])
+     ns0:IndividualPromptRunTimeInfoLimitedByPromptReference(promptID: xsd:int, formulaExprString: xsd:string)
+     ns0:IndividualPromptRunTimeInfoSingleValueType(eType: xsd:string, caption: xsd:string, codeValue: xsd:string)
+     ns0:IndividualPromptRunTimeInfoValuesType(value: ns0:IndividualPromptRunTimeInfoSingleValueType[])
+     ns0:Initiative(caption: xsd:string, description: xsd:string, path: xsd:string, obj: ns0:CatalogObject, permission: xsd:int)
+     ns0:InitiativeNode(type: ns0:InitiativeNodeType, nodeID: xsd:string, parentID: xsd:string, perspectiveID: xsd:string, assessmentRule: ns0:AssessmentRule, initiative: ns0:Initiative, pinnedKPI: ns0:PinnedKPI, linkedInitiativeNode: ns0:LinkedInitiativeNode, itemInfo: ns0:ItemInfo, permission: xsd:int)
+     ns0:InitiativeNodeList(node: ns0:InitiativeNode[])
+     ns0:InitiativeNodeType
+     ns0:InitiativeReferences(initiativeRef: xsd:string[])
+     ns0:ItemInfo(path: xsd:string, type: ns0:ItemInfoType, caption: xsd:string, description: xsd:string, attributes: xsd:int, size: xsd:int, lastModified: xsd:dateTime, created: xsd:dateTime, accessed: xsd:dateTime, executed: xsd:dateTime, creator: ns0:Account, lastModifier: ns0:Account, accessor: ns0:Account, executor: ns0:Account, signature: xsd:string, targetPath: xsd:string, acl: ns0:ACL, owner: ns0:Account, itemProperties: ns0:NameValuePair[], operationPermissions: xsd:int, itemInternalProperties: ns0:NameValuePair[], contentState: ns0:ContentStateType)
+     ns0:ItemInfoType
+     ns0:Job(name: xsd:string, description: xsd:string, userID: xsd:string, scriptType: ns0:ScriptType, scriptID: xsd:string, agentType: ns0:AgentType, agentScheduleDisabled: xsd:boolean, agentReportPath: xsd:string, maxRunTimeMS: xsd:unsignedInt, runningInstancesCount: xsd:unsignedShort, maxConcurrentInstances: xsd:unsignedShort, timeZone: xsd:string, lastRunDateTime: xsd:dateTime, nextRunDateTime: xsd:dateTime, beginDate: xsd:date, startTime: xsd:time, endDate: xsd:date, endTime: xsd:time, intervalMinutes: xsd:unsignedInt, disabled: xsd:boolean, deleteJobWhenDone: xsd:boolean, executeWhenMissed: xsd:boolean, jobTrigger: ns0:JobTrigger)
+     ns0:JobFilter(userID: xsd:string[])
+     ns0:JobInfo(jobStats: ns0:JobStats, fileInfo: ns0:FileInfo[], detailedInfo: {_value_1: ANY[]})
+     ns0:JobInstance(status: ns0:JobInstanceStatus, beginDateTime: xsd:dateTime, endDateTime: xsd:dateTime, successfulDeliveries: xsd:unsignedInt, errorMessage: xsd:string)
+     ns0:JobInstanceFilter(jobReference: xsd:unsignedInt[], jobInstanceStatus: ns0:JobInstanceStatus)
+     ns0:JobInstanceStatus
+     ns0:JobReferenceAndInstanceReferences(jobReference: xsd:unsignedInt, jobInstanceReference: xsd:unsignedLong[])
+     ns0:JobReferenceError(jobReference: xsd:unsignedInt, errorMessage: xsd:string)
+     ns0:JobReferenceErrors(jobReferenceError: ns0:JobReferenceError[])
+     ns0:JobReferences(jobReference: xsd:unsignedInt[])
+     ns0:JobState
+     ns0:JobStats(jobID: xsd:integer, jobType: xsd:string, jobUser: xsd:string, jobState: ns0:jobState, jobTotalMilliSec: xsd:string, jobStartedTime: xsd:dateTime, jobFinishedTime: xsd:dateTime, jobIsCancelling: xsd:string, exception: ns0:SAWException)
+     ns0:JobTrigger(jobTriggerType: ns0:JobTriggerType, dailyTrigger: ns0:DailyTrigger, weeklyTrigger: ns0:WeeklyTrigger, monthlyDateTrigger: ns0:MonthlyDateTrigger, monthlyDOWTrigger: ns0:MonthlyDayOfWeekTrigger)
+     ns0:JobTriggerType
+     ns0:KPICancelationStatus(kpiExecutionID: xsd:string, canceled: xsd:boolean)
+     ns0:KPIColumnList(kpiColumnName: ns0:KPIColumnName[])
+     ns0:KPIColumnName
+     ns0:KPIDimensionLOVExecutionStatus(kpiLOVExecutionID: xsd:string, endOfData: xsd:boolean, resultSet: ns0:KPIDimensionLOVResultSet)
+     ns0:KPIDimensionLOVResultSet(kpiDimensionColumnType: xsd:string, kpiDimensionValue: xsd:string[])
+     ns0:KPIDimensionPinning(dimensionID: xsd:string, variableType: xsd:string, variableName: xsd:string, value: xsd:string, levelID: xsd:string, displayValue: xsd:string)
+     ns0:KPIDimensionReferences(KPIDimensionReference: {dimensionID: xsd:string, dimensionDef: xsd:string, kpiPath: xsd:string[], isMapped: xsd:boolean, isDefaulted: xsd:boolean, displayLabel: xsd:string, mappedToDimensionID: xsd:string, defaultValue: ns0:KPIDimensionValue}[])
+     ns0:KPIDimensionValue(value: xsd:string, levelID: xsd:string, displayValue: xsd:string)
+     ns0:KPIExecutionOptions(async: xsd:boolean, bypassCache: xsd:boolean)
+     ns0:KPIExecutionStatus(kpiExecutionID: xsd:string, finished: xsd:boolean, resultSet: ns0:KPIResultSet)
+     ns0:KPIGenerateDrillToStatus(url: xsd:string, success: xsd:boolean)
+     ns0:KPIPinning(kpiDimensionPinning: ns0:KPIDimensionPinning[])
+     ns0:KPIRequest(kpiPath: xsd:string, kpiPinning: ns0:KPIPinning)
+     ns0:KPIRequestList(kpiRequest: ns0:KPIRequest[])
+     ns0:KPIResult(kpiResultColumn: ns0:KPIResultColumn[])
+     ns0:KPIResultColumn(kpiResultColumnName: xsd:string, objectContext: xsd:string, isAnnotated: xsd:boolean, isWritable: xsd:boolean, kpiResultColumnType: xsd:string, kpiResultColumnValueIsNull: xsd:boolean, kpiResultColumnValue: xsd:string, kpiResultColumnFormat: xsd:string, kpiResultColumnLabel: xsd:string)
+     ns0:KPIResultSet(kpiResult: ns0:KPIResult[])
+     ns0:KPIVariable(variableName: xsd:string, variableValue: xsd:string, variableType: ns0:KPIVariableType[])
+     ns0:KPIVariableList(variable: ns0:KPIVariable[])
+     ns0:KPIVariableType
+     ns0:LinkedInitiativeNode(caption: xsd:string, scorecardPath: xsd:string, linkedNodeID: xsd:string)
+     ns0:LinkedStrategyNode(caption: xsd:string, scorecardPath: xsd:string, linkedNodeID: xsd:string)
+     ns0:LogReloadDomain
+     ns0:LogReloadLevel
+     ns0:LogonParameter(name: xsd:string, value: xsd:string)
+     ns0:MRUItem(catalogPath: xsd:string, isFavorite: xsd:boolean, itemInfo: ns0:ItemInfo)
+     ns0:MonthlyDateTrigger(day: xsd:gDay[], month: xsd:gMonth[])
+     ns0:MonthlyDayOfWeekTrigger(weeksOccurrence: ns0:WeekOccurrence[], dayOfWeek: ns0:DayOfWeek[], month: xsd:gMonth[])
+     ns0:NameValueArrayPair(name: xsd:string, values: xsd:string[])
+     ns0:NameValuePair(name: xsd:string, value: xsd:string)
+     ns0:ObjectCategory(id: xsd:string, name: xsd:string, description: xsd:string, thumbnailsSizes: xsd:int, notSearchType: xsd:boolean, icons: ns0:ObjectIcons)
+     ns0:ObjectCustomAttribute(name: xsd:string, expr: xsd:string)
+     ns0:ObjectFilter(attribute: xsd:string, value: xsd:string)
+     ns0:ObjectGroup(creatableItem: ns0:CreatableItem[], name: xsd:string, iconMedium: ns0:ObjectIcon, description: xsd:string)
+     ns0:ObjectIcon(iconType: xsd:string, iconPath: xsd:string)
+     ns0:ObjectIcons(icon: ns0:ObjectIcon[])
+     ns0:ObjectTypes(signature: xsd:string, intrinsicType: xsd:int, categoryID: xsd:string, folderType: xsd:int, extension: xsd:string, vpat: xsd:boolean, canBeFavorite: xsd:boolean, editPrivilege: xsd:string, customAttributes: ns0:CustomAttributes, subTypes: ns0:SubTypes, name: xsd:string, description: xsd:string, thumbnailsSizes: xsd:int, notSearchType: xsd:boolean, icons: ns0:ObjectIcons)
+     ns0:Objective(caption: xsd:string, description: xsd:string, path: xsd:string, obj: ns0:CatalogObject, permission: xsd:int)
+     ns0:ObjectiveReferences(objectiveRef: xsd:string[])
+     ns0:OverriddenAssessment(context: xsd:string, originalNormalizedAssessmentResult: xsd:double, originalAssessmentResult: xsd:string, computedNormalizedAssessmentResult: xsd:double, computedAssessmentResult: xsd:string, overriddenNormalizedAssessmentResult: xsd:double, overriddenAssessmentResult: xsd:string, user: xsd:string, overriddenTime: xsd:dateTime, subject: xsd:string, comment: xsd:string, overriddenTimeDisplay: xsd:string)
+     ns0:OverrideType
+     ns0:PasteItem2Params(saveAsName: xsd:string, sourceApplication: xsd:string, replaceReference: ns0:NameValuePair[])
+     ns0:PathMap(pathMapEntries: ns0:PathMapEntry[])
+     ns0:PathMapEntry(source: xsd:string, destination: xsd:string)
+     ns0:Perspective(caption: xsd:string, description: xsd:string, perspectiveID: xsd:string, path: xsd:string, obj: ns0:CatalogObject, permission: xsd:int)
+     ns0:PerspectiveList(perspective: ns0:Perspective[])
+     ns0:PinnedKPI(caption: xsd:string, description: xsd:string, kpiPath: xsd:string, pinning: ns0:KPIPinning, obj: ns0:CatalogObject, permission: xsd:int)
+     ns0:Privilege(name: xsd:string, description: xsd:string)
+     ns0:PromptCollectionRunTimeInfo(collectionID: xsd:string, viewStatePath: xsd:string, currentStep: xsd:int, numPromptSteps: xsd:int, reloadInline: xsd:boolean, supportAutoComplete: xsd:boolean, showReturnLink: xsd:boolean, currentAction: xsd:string)
+     ns0:PromptStepObjectModel(title: xsd:string, instruction: xsd:string, buttonsPosition: xsd:string, labelPosition: xsd:string, wrapLabelText: xsd:boolean, customWidthUsage: xsd:string, customWidthWidth: xsd:string, setWidthToAllPrompts: xsd:boolean, autoApplyPrompt: xsd:boolean, showResetButton: xsd:boolean, runTimeInfo: ns0:PromptStepRunTimeInfo, promptObj: ns0:IndividualPromptObjectModel[])
+     ns0:PromptStepRunTimeInfo(applyToAllSteps: xsd:boolean, autoApplyPrompt: xsd:boolean, showResetButton: xsd:boolean, remaininglRequiredPromptsOnSubsequentSteps: xsd:int, firstPromptStartIndex: xsd:int)
+     ns0:PromptedColumnInfo(Columns: xsd:string[])
+     ns0:PromptsObjectModel(name: xsd:string, description: xsd:string, scope: xsd:string, subjectArea: xsd:string, layout: xsd:string, runTimeInfo: ns0:PromptCollectionRunTimeInfo, promptStepObj: ns0:PromptStepObjectModel[])
+     ns0:PurgeJobInstancesFilter(({jobReference: xsd:unsignedInt[]} | {userID: xsd:string[]}))
+     ns0:QueryResults(rowset: xsd:string, queryID: xsd:string, finished: xsd:boolean)
+     ns0:ReadObjectsReturnOptions
+     ns0:RenameAccount(oldAccountName: xsd:string, newAccountName: xsd:string, accountType: xsd:int)
+     ns0:RenameAccountResult(oldAccountName: xsd:string, newAccountName: xsd:string, accountType: xsd:int, status: xsd:int)
+     ns0:RenameAccountsStatus(status: xsd:int, accountsResult: ns0:RenameAccountResult[])
+     ns0:ReplaceType
+     ns0:ReportADFParameter(name: xsd:string, operator: xsd:string, type: xsd:string, dataType: xsd:string, value: xsd:string, values: ns0:ADFParameterValues)
+     ns0:ReportADFParameters(parameters: ns0:ReportADFParameter[])
+     ns0:ReportColumn(id: xsd:string, tableHeading: xsd:string, columnHeading: xsd:string, hidden: xsd:boolean)
+     ns0:ReportColumnAggrRule
+     ns0:ReportHTMLLinksMode
+     ns0:ReportHTMLOptions(enableDelayLoading: xsd:boolean, linkMode: xsd:string)
+     ns0:ReportHierarchicalColumn(id: xsd:string, tableHeading: xsd:string, columnHeading: xsd:string, hidden: xsd:boolean, subjectArea: xsd:string, tableName: xsd:string, hierarchyID: xsd:string, dimensionID: xsd:string)
+     ns0:ReportParams(filterExpressions: xsd:string[], variables: ns0:Variable[], nameValues: ns0:NameValuePair[], templateInfos: ns0:TemplateInfo[], viewName: xsd:string)
+     ns0:ReportRef(reportPath: xsd:string, reportXml: xsd:string)
+     ns0:ReportRegularColumn(id: xsd:string, tableHeading: xsd:string, columnHeading: xsd:string, hidden: xsd:boolean, sqlFormula: xsd:string, measure: xsd:boolean, aggrRule: ns0:ReportColumnAggrRule)
+     ns0:RestoreOptions(tenantsToUnarchive: ns0:TenantUnarchiveDetails[], flagOverwrite: ns0:ReplaceType, flagACL: ns0:ACLOptionType)
+     ns0:SAColumn(name: xsd:string, displayName: xsd:string, description: xsd:string, nullable: xsd:boolean, isDoubleColumn: xsd:boolean, dataType: xsd:string, aggregatable: xsd:boolean, aggrRule: xsd:string, hidden: xsd:boolean)
+     ns0:SADataType
+     ns0:SASubjectArea(name: xsd:string, displayName: xsd:string, description: xsd:string, businessModel: xsd:string, tables: ns0:SATable[], hidden: xsd:boolean)
+     ns0:SASubjectAreaDetails
+     ns0:SATable(name: xsd:string, displayName: xsd:string, description: xsd:string, columns: ns0:SAColumn[], hidden: xsd:boolean, parentTableName: xsd:string)
+     ns0:SATableDetails
+     ns0:SAWException(message: xsd:string, exception: ns0:SAWException[])
+     ns0:SAWLocale(language: xsd:string, country: xsd:string)
+     ns0:SAWSessionParameters(locale: ns0:SAWLocale, language: ns0:SAWLocale, userAgent: xsd:string, asyncLogon: xsd:boolean, logonParams: ns0:LogonParameter[], sessionID: xsd:string, syndicate: xsd:string, URLGeneratorParams: ns0:URLGeneratorParams, userAgentLanguage: xsd:string)
+     ns0:ScorecardAssessmentResultSet(nodeResult: ns0:ScorecardNodeResult[])
+     ns0:ScorecardCancelationStatus(scorecardExecutionID: xsd:string, canceled: xsd:boolean)
+     ns0:ScorecardCloseStatus(scorecardExecutionID: xsd:string, closed: xsd:boolean)
+     ns0:ScorecardDetailsOptions(includeCatalogObjects: xsd:boolean)
+     ns0:ScorecardDimensionReferences(ScorecardDimensionReference: {dimensionID: xsd:string, dimensionDef: xsd:string, kpiPath: xsd:string[], isMapped: xsd:boolean, isDefaulted: xsd:boolean, displayLabel: xsd:string, mappedToDimensionID: xsd:string, defaultValue: ns0:KPIDimensionValue}[])
+     ns0:ScorecardExecutionOptions(async: xsd:boolean, executionTreeOptions: xsd:integer, bypassCache: xsd:boolean)
+     ns0:ScorecardExecutionStatus(scorecardExecutionID: xsd:string, finished: xsd:boolean, assessmentResultSet: ns0:ScorecardAssessmentResultSet)
+     ns0:ScorecardGenerateDrillToStatus(url: xsd:string, success: xsd:boolean)
+     ns0:ScorecardItemType
+     ns0:ScorecardMoveOperationType
+     ns0:ScorecardNode(nodeID: xsd:string, nodeType: ns0:ScorecardNodeType)
+     ns0:ScorecardNodeList(scorecardNode: ns0:ScorecardNode[])
+     ns0:ScorecardNodeResult(nodeID: xsd:string, nodeType: ns0:ScorecardNodeType, normalizedAssessmentResult: xsd:double, formattedNormalizedAssessmentResult: xsd:string, assessmentResult: xsd:string, objectContext: xsd:string, isAnnotated: xsd:boolean, isOverridden: xsd:boolean, overriddenAssessment: ns0:OverriddenAssessment, kpiResult: ns0:KPIResult, validActionLinks: xsd:string)
+     ns0:ScorecardNodeType
+     ns0:ScorecardSettings(assessmentMappings: ns0:AssessmentMappings, dimensionMappings: ns0:DimensionMappings, watchlistStylesSet: xsd:string, itemInfo: ns0:ItemInfo, permission: xsd:int, timeOut: xsd:int)
+     ns0:ScorecardVariable(variableName: xsd:string, variableValue: xsd:string)
+     ns0:ScorecardVariableList(variable: ns0:ScorecardVariable[])
+     ns0:ScorecardView(type: ns0:ScorecardViewType, caption: xsd:string, description: xsd:string, path: xsd:string, obj: ns0:CatalogObject, permission: xsd:int)
+     ns0:ScorecardViewDocuments(scorecardView: ns0:ScorecardView[])
+     ns0:ScorecardViewType
+     ns0:ScriptType
+     ns0:SegmentationOptions(removeCacheHits: xsd:boolean, countOverride: ns0:OverrideType, cacheOverride: ns0:OverrideType, samplingFactor: xsd:decimal, govRules: ns0:NameValuePair[], prompts: ns0:NameValuePair[])
+     ns0:ServiceInstanceConfigParams(serviceInstanceID: xsd:string, serviceInstanceCatalogSizeLimitMB: xsd:int, personalStorageLimitMB: xsd:int)
+     ns0:SessionEnvironment(userName: xsd:string, homeDirectory: ns0:ItemInfo, locale: ns0:SAWLocale, language: ns0:SAWLocale, timezoneid: xsd:string, sharedDirectories: ns0:ItemInfo[], sessionExpireMinutes: xsd:unsignedLong)
+     ns0:StartPageParams(idsPrefix: xsd:string, dontUseHttpCookies: xsd:boolean)
+     ns0:StrategyNode(type: ns0:StrategyNodeType, nodeID: xsd:string, parentID: xsd:string, perspectiveID: xsd:string, assessmentRule: ns0:AssessmentRule, objective: ns0:Objective, pinnedKPI: ns0:PinnedKPI, linkedStrategyNode: ns0:LinkedStrategyNode, itemInfo: ns0:ItemInfo, permission: xsd:int, balanceInfo: ns0:BalanceInfo)
+     ns0:StrategyNodeList(node: ns0:StrategyNode[])
+     ns0:StrategyNodeType
+     ns0:SubType(subtypeID: xsd:string, name: xsd:string, editPrivilege: xsd:string, filter: ns0:ObjectFilter[])
+     ns0:SubTypes(subType: ns0:SubType[])
+     ns0:TemplateInfo(templateForEach: xsd:string, templateIterator: xsd:string, instance: ns0:TemplateInfoInstance[])
+     ns0:TemplateInfoInstance(instanceName: xsd:string, nameValues: ns0:NameValuePair[])
+     ns0:TenantArchiveDetails(srcTenantId: xsd:string, anonymizedId: xsd:string)
+     ns0:TenantUnarchiveDetails(srcTenantId: xsd:string, targetTenantId: xsd:string, unarchivePaths: ns0:UnarchivePathType[])
+     ns0:TieBreakerRuleType
+     ns0:TreeNodePath(treePath: xsd:string, treeNode: xsd:string)
+     ns0:URLGeneratorParams(commandAndPageURL: xsd:string, staticResourcesURL: xsd:string)
+     ns0:UnarchiveJobState(jobID: xsd:string, status: xsd:int, message: xsd:string)
+     ns0:UnarchiveParams(saveAsName: xsd:string, sourceApplication: xsd:string, replaceReference: ns0:NameValuePair[], archiveFileName: xsd:string)
+     ns0:UnarchivePathType
+     ns0:UpdateACLMode
+     ns0:UpdateACLParams(updateFlag: ns0:UpdateACLMode)
+     ns0:UpdateCatalogItemACLParams(updateFlag: ns0:UpdateACLMode, recursive: xsd:boolean)
+     ns0:UpdatedScorecardACLItem(type: ns0:ScorecardItemType, path: xsd:string, id: xsd:string, permission: xsd:int, itemInfo: ns0:ItemInfo)
+     ns0:Variable(name: xsd:string, value: xsd:anyType)
+     ns0:WeekOccurrence
+     ns0:WeeklyTrigger(weeksInterval: xsd:unsignedShort, dayOfWeek: ns0:DayOfWeek[])
+     ns0:Weight(childId: xsd:string, weightPercentage: xsd:decimal)
+     ns0:WeightedRule(weight: ns0:Weight[])
+     ns0:XMLQueryExecutionOptions(async: xsd:boolean, maxRowsPerPage: xsd:int, refresh: xsd:boolean, presentationInfo: xsd:boolean, type: xsd:string)
+     ns0:XMLQueryOutputFormat
+     ns0:arrayOfGUIDs(GUID: xsd:string[])
+
+Bindings:
+     Soap11Binding: {urn://oracle.bi.webservices/v12}AdministrationService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}AnalysisExportViewsService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}BulkDataExportService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}ConditionService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}HtmlViewService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}IBotService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}JobManagementService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}KPIAssessmentService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}MetadataService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}MultiTenancyManagementService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}ReplicationService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}ReportEditingService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}SAWSessionService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}SchedulerService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}ScorecardAssessmentService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}ScorecardMetadataService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}SecurityService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}UserPersonalizationService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}WebCatalogService
+     Soap11Binding: {urn://oracle.bi.webservices/v12}XmlViewService
+
+Service: SAWSessionService
+     Port: SAWSessionServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}SAWSessionService)
+         Operations:
+            getBIPSVariables(names: xsd:string[], sessionID: xsd:string) -> return: xsd:string[]
+            getCurUser(sessionID: xsd:string) -> return: xsd:string
+            getSessionEnvironment(sessionID: xsd:string) -> return: ns0:SessionEnvironment
+            getSessionVariables(names: xsd:string[], sessionID: xsd:string) -> return: xsd:string[]
+            impersonate(name: xsd:string, password: xsd:string, impersonateID: xsd:string) -> sessionID: xsd:string
+            impersonateex(name: xsd:string, password: xsd:string, impersonateID: xsd:string, sessionparams: ns0:SAWSessionParameters) -> return: ns0:AuthResult
+            keepAlive(sessionID: xsd:string[]) -> 
+            logoff(sessionID: xsd:string) -> 
+            logon(name: xsd:string, password: xsd:string) -> sessionID: xsd:string
+            logonex(name: xsd:string, password: xsd:string, sessionparams: ns0:SAWSessionParameters) -> return: ns0:AuthResult
+            logonmt(name: xsd:string, password: xsd:string, tenantguid: xsd:string, servicename: xsd:string) -> sessionID: xsd:string
+
+Service: WebCatalogService
+     Port: WebCatalogServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}WebCatalogService)
+         Operations:
+            copyItem(pathSrc: xsd:string, pathDest: xsd:string, flagACL: xsd:int, sessionID: xsd:string) -> 
+            copyItem2(path: xsd:string[], recursive: xsd:boolean, permissions: xsd:boolean, timestamps: xsd:boolean, useMtom: xsd:boolean, skipPath: xsd:string[], options: ns0:CopyItem2Params, sessionID: xsd:string) -> archive: xsd:base64Binary
+            createFolder(path: xsd:string, createIfNotExists: xsd:boolean, createIntermediateDirs: xsd:boolean, sessionID: xsd:string) -> 
+            createLink(path: xsd:string, pathTarget: xsd:string, overwriteIfExists: xsd:boolean, sessionID: xsd:string) -> 
+            deleteItem(path: xsd:string, sessionID: xsd:string) -> 
+            getItemInfo(path: xsd:string, resolveLinks: xsd:boolean, sessionID: xsd:string) -> return: ns0:ItemInfo
+            getMaintenanceMode(sessionID: xsd:string) -> return: xsd:boolean
+            getObjectCategories(sessionID: xsd:string) -> objectCategory: ns0:ObjectCategory[]
+            getObjectCreateList(sessionID: xsd:string) -> objectGroup: ns0:ObjectGroup[]
+            getObjectTypes(sessionID: xsd:string) -> objectTypes: ns0:ObjectTypes[]
+            getSubItems(path: xsd:string, mask: xsd:string, resolveLinks: xsd:boolean, options: ns0:GetSubItemsParams, sessionID: xsd:string) -> itemInfo: ns0:ItemInfo[]
+            getUnarchiveJobState(jobID: xsd:string, sessionID: xsd:string) -> unarchiveJobState: ns0:UnarchiveJobState
+            getUserHomeDirPath(username: xsd:string, sessionID: xsd:string) -> path: xsd:string
+            maintenanceMode(flag: xsd:boolean, sessionID: xsd:string) -> 
+            moveItem(pathSrc: xsd:string, pathDest: xsd:string, flagACL: xsd:int, sessionID: xsd:string) -> 
+            pasteItem2(archive: xsd:base64Binary, replacePath: xsd:string, flagACL: xsd:int, flagOverwrite: xsd:int, flagReplaceReferences: xsd:int, options: ns0:PasteItem2Params, sessionID: xsd:string) -> 
+            readObjects(paths: xsd:string[], resolveLinks: xsd:boolean, errorMode: ns0:ErrorDetailsLevel, returnOptions: ns0:ReadObjectsReturnOptions, sessionID: xsd:string) -> catalogObject: ns0:CatalogObject[]
+            removeFolder(path: xsd:string, recursive: xsd:boolean, sessionID: xsd:string) -> 
+            setItemAttributes(path: xsd:string[], value: xsd:int, valueOff: xsd:int, recursive: xsd:boolean, sessionID: xsd:string) -> 
+            setItemProperty(path: xsd:string[], lastModified: xsd:dateTime[], name: xsd:string[], value: xsd:string[], recursive: xsd:boolean, sessionID: xsd:string) -> 
+            setOwnership(path: xsd:string[], owner: ns0:Account, recursive: xsd:boolean, sessionID: xsd:string) -> 
+            unarchive(archive: xsd:base64Binary, replacePath: xsd:string, flagACL: xsd:int, flagOverwrite: xsd:int, flagReplaceReferences: xsd:int, options: ns0:UnarchiveParams, sessionID: xsd:string) -> unarchiveJobState: ns0:UnarchiveJobState
+            updateCatalogItemACL(path: xsd:string[], acl: ns0:ACL, options: ns0:UpdateCatalogItemACLParams, sessionID: xsd:string) -> 
+            writeObjects(catalogObjects: ns0:CatalogObject[], allowOverwrite: xsd:boolean, createIntermediateDirs: xsd:boolean, errorMode: ns0:ErrorDetailsLevel, sessionID: xsd:string) -> errorInfo: ns0:ErrorInfo[]
+
+Service: XmlViewService
+     Port: XmlViewServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}XmlViewService)
+         Operations:
+            cancelQuery(queryID: xsd:string, sessionID: xsd:string) -> 
+            executeSQLQuery(sql: xsd:string, outputFormat: ns0:XMLQueryOutputFormat, executionOptions: ns0:XMLQueryExecutionOptions, sessionID: xsd:string) -> return: ns0:QueryResults
+            executeXMLQuery(report: ns0:ReportRef, outputFormat: ns0:XMLQueryOutputFormat, executionOptions: ns0:XMLQueryExecutionOptions, reportParams: ns0:ReportParams, sessionID: xsd:string) -> return: ns0:QueryResults
+            fetchNext(queryID: xsd:string, sessionID: xsd:string) -> return: ns0:QueryResults
+            getPromptedFilters(report: ns0:ReportRef, sessionID: xsd:string) -> promptedFilter: xsd:string[]
+            upgradeXML(xml: xsd:string, sessionID: xsd:string) -> return: xsd:string
+
+Service: SecurityService
+     Port: SecurityServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}SecurityService)
+         Operations:
+            forgetAccounts(account: ns0:Account[], cleanuplevel: xsd:int, sessionID: xsd:string) -> 
+            forgetAccountsEx(forgetAccountsList: ns0:ForgetAccount[], sessionID: xsd:string) -> accountsStatus: ns0:ForgetAccountsStatus
+            getAccountTenantID(account: ns0:Account, sessionID: xsd:string) -> return: xsd:string
+            getAccounts(account: ns0:Account[], sessionID: xsd:string) -> accountDetails: ns0:Account[]
+            getGlobalPrivilegeACL(privilegeName: xsd:string, sessionID: xsd:string) -> acl: ns0:ACL
+            getGlobalPrivileges(sessionID: xsd:string) -> sawPrivileges: ns0:Privilege[]
+            getGroups(member: ns0:Account[], expandGroups: xsd:boolean, sessionID: xsd:string) -> account: ns0:Account[]
+            getMembers(group: ns0:Account[], expandGroups: xsd:boolean, sessionID: xsd:string) -> account: ns0:Account[]
+            getPermissions(acls: ns0:ACL[], account: ns0:Account, sessionID: xsd:string) -> return: xsd:int[]
+            getPermissionsEx(acls: ns0:ACL[], account: ns0:Account, owner: ns0:Account, creator: ns0:Account, sessionID: xsd:string) -> return: xsd:int[]
+            getPrivilegesStatus(privileges: xsd:string[], sessionID: xsd:string) -> return: xsd:boolean[]
+            isMember(group: ns0:Account[], member: ns0:Account[], expandGroups: xsd:boolean, sessionID: xsd:string) -> return: xsd:boolean
+            joinGroups(group: ns0:Account[], member: ns0:Account[], sessionID: xsd:string) -> 
+            leaveGroups(group: ns0:Account[], member: ns0:Account[], sessionID: xsd:string) -> 
+            renameAccounts(from: ns0:Account[], to: ns0:Account[], sessionID: xsd:string) -> 
+            renameAccountsEx(renameAccountsList: ns0:RenameAccount[], sessionID: xsd:string) -> accountsStatus: ns0:RenameAccountsStatus
+            updateGlobalPrivilegeACL(privilegeName: xsd:string, acl: ns0:ACL, updateACLParams: ns0:UpdateACLParams, sessionID: xsd:string) -> 
+
+Service: ConditionService
+     Port: ConditionServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}ConditionService)
+         Operations:
+            evaluateCondition(path: xsd:string, reportCustomizationParameters: xsd:string[], sessionID: xsd:string) -> conditionIsTrue: xsd:boolean
+            evaluateInlineCondition(conditionXML: xsd:string, reportCustomizationParameters: xsd:string[], sessionID: xsd:string) -> conditionIsTrue: xsd:boolean
+            getConditionCustomizableReportElements(path: xsd:string, sessionID: xsd:string) -> customizableElement: xsd:string[]
+
+Service: HtmlViewService
+     Port: HtmlViewService (Soap11Binding: {urn://oracle.bi.webservices/v12}HtmlViewService)
+         Operations:
+            addReportToPage(pageID: xsd:string, reportID: xsd:string, report: ns0:ReportRef, reportViewName: xsd:string, reportParams: ns0:ReportParams, options: ns0:ReportHTMLOptions, sessionID: xsd:string) -> 
+            endPage(pageID: xsd:string, sessionID: xsd:string) -> 
+            getCommonBodyHtml(pageID: xsd:string, sessionID: xsd:string) -> return: xsd:string
+            getHeadersHtml(pageID: xsd:string, sessionID: xsd:string) -> return: xsd:string
+            getHtmlForPageWithOneReport(reportID: xsd:string, report: ns0:ReportRef, reportViewName: xsd:string, reportParams: ns0:ReportParams, reportOptions: ns0:ReportHTMLOptions, pageParams: ns0:StartPageParams, sessionID: xsd:string) -> return: xsd:string
+            getHtmlForReport(pageID: xsd:string, pageReportID: xsd:string, sessionID: xsd:string) -> return: xsd:string
+            setBridge(bridge: xsd:string, sessionID: xsd:string) -> 
+            startPage(options: ns0:StartPageParams, sessionID: xsd:string) -> return: xsd:string
+
+Service: IBotService
+     Port: IBotServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}IBotService)
+         Operations:
+            deleteIBot(path: xsd:string, sessionID: xsd:string) -> 
+            enableIBot(path: xsd:string, enable: xsd:boolean, sessionID: xsd:string) -> jobID: xsd:int
+            executeIBotNow(path: xsd:string, sessionID: xsd:string) -> 
+            getAgentPaths(userID: xsd:string, sessionID: xsd:string) -> agentPath: xsd:string[]
+            getAgents(agentPath: xsd:string[], sessionID: xsd:string) -> agent: ns0:Agent[], agentError: ns0:AgentError[]
+            getIBotStatus(path: xsd:string, sessionID: xsd:string) -> lastRun: xsd:string, nextRun: xsd:string, lastRunStatus: xsd:string, priority: xsd:string, agentEnabled: xsd:boolean, subscribed: xsd:boolean, specificRecipient: xsd:boolean
+            moveIBot(fromPath: xsd:string, toPath: xsd:string, resolveLinks: xsd:boolean, allowOverwrite: xsd:boolean, sessionID: xsd:string) -> 
+            purgeAlerts(maxAgeSecs: xsd:unsignedInt, userGlob: xsd:string, sessionID: xsd:string) -> alertsPurged: xsd:unsignedInt, usersVisited: xsd:unsignedInt, leakedContentPurged: xsd:unsignedInt, alertsRemaining: xsd:unsignedInt, errors: xsd:unsignedInt
+            sendMessage(recipient: xsd:string[], group: xsd:string[], subject: xsd:string, body: xsd:string, priority: xsd:string, sessionID: xsd:string) -> status: xsd:string
+            subscribe(path: xsd:string, customizationXml: xsd:string, sessionID: xsd:string) -> 
+            unsubscribe(path: xsd:string, sessionID: xsd:string) -> 
+            writeIBot(obj: ns0:CatalogObject, path: xsd:string, resolveLinks: xsd:boolean, allowOverwrite: xsd:boolean, sessionID: xsd:string) -> jobID: xsd:int
+
+Service: JobManagementService
+     Port: JobManagementServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}JobManagementService)
+         Operations:
+            cancelJob(jobID: xsd:integer, sessionID: xsd:string) -> jobInfo: ns0:JobInfo
+            deleteResultSet(targetLevel: xsd:string, GUIDs: ns0:arrayOfGUIDs, segmentPath: xsd:string, sessionID: xsd:string) -> jobInfo: ns0:JobInfo
+            getCounts(segmentPath: xsd:string, treePath: xsd:string, segmentationOptions: ns0:SegmentationOptions, sessionID: xsd:string) -> jobInfo: ns0:JobInfo
+            getJobInfo(jobID: xsd:integer, sessionID: xsd:string) -> jobInfo: ns0:JobInfo
+            getPromptedColumns(segmentPath: xsd:string, treePath: xsd:string, sessionID: xsd:string) -> ColumnInfo: ns0:PromptedColumnInfo
+            prepareCache(segmentPath: xsd:string, treePath: xsd:string, refresh: xsd:boolean, sessionID: xsd:string) -> jobInfo: ns0:JobInfo
+            purgeCache(segmentPath: xsd:string, treePath: xsd:string, ignoreCacheRef: xsd:boolean, sessionID: xsd:string) -> jobInfo: ns0:JobInfo
+            saveResultSet(segmentPath: xsd:string, treeNodePath: ns0:TreeNodePath, savedSegmentPath: xsd:string, segmentationOptions: ns0:SegmentationOptions, SRCustomLabel: xsd:string, appendStaticSegment: xsd:boolean, sessionID: xsd:string) -> jobInfo: ns0:JobInfo
+            writeListFiles(report: ns0:ReportRef, reportParams: ns0:ReportParams, segmentPath: xsd:string, treeNodePath: ns0:TreeNodePath, segmentationOptions: ns0:SegmentationOptions, filesystem: xsd:string, timeout: xsd:integer, sessionID: xsd:string) -> jobInfo: ns0:JobInfo
+
+Service: KPIAssessmentService
+     Port: KPIAssessmentServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}KPIAssessmentService)
+         Operations:
+            cancelKPIExecution(kpiExecutionID: xsd:string, sessionID: xsd:string) -> return: ns0:KPICancelationStatus
+            executeKPI(executionOptions: ns0:KPIExecutionOptions, kpiRequestList: ns0:KPIRequestList, kpiColumnList: ns0:KPIColumnList, kpiVariableList: ns0:KPIVariableList, sessionID: xsd:string) -> return: ns0:KPIExecutionStatus
+            executeKPIDimensionLOVQuery(rowsPerFetch: xsd:integer, kpiPath: xsd:string, dimensionID: xsd:string, sessionID: xsd:string) -> return: ns0:KPIDimensionLOVExecutionStatus
+            fetchKPIAssessment(kpiExecutionID: xsd:string, sessionID: xsd:string) -> return: ns0:KPIExecutionStatus
+            fetchNextKPIDimensionLOV(kpiLOVExecutionID: xsd:string, sessionID: xsd:string) -> return: ns0:KPIDimensionLOVExecutionStatus
+            generateDrillTo(kpiRequest: ns0:KPIRequest, kpiColumnList: ns0:KPIColumnList, kpiVariableList: ns0:KPIVariableList, reportPath: xsd:string, sessionID: xsd:string) -> return: ns0:KPIGenerateDrillToStatus
+            getKPIContributionWheelDimensions(kpiContributionWheelPath: xsd:string, kpiContributionWheelXML: xsd:string, sessionID: xsd:string) -> return: ns0:KPIDimensionReferences
+            getKPIWatchlistDimensions(kpiWatchlistPath: xsd:string, kpiWatchlistXML: xsd:string, sessionID: xsd:string) -> return: ns0:KPIDimensionReferences
+
+Service: MetadataService
+     Port: MetadataServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}MetadataService)
+         Operations:
+            clearQueryCache(sessionID: xsd:string) -> return: xsd:boolean
+            describeColumn(subjectAreaName: xsd:string, tableName: xsd:string, columnName: xsd:string, sessionID: xsd:string) -> column: ns0:SAColumn
+            describeSubjectArea(subjectAreaName: xsd:string, detailsLevel: ns0:SASubjectAreaDetails, sessionID: xsd:string) -> subjectArea: ns0:SASubjectArea
+            describeTable(subjectAreaName: xsd:string, tableName: xsd:string, detailsLevel: ns0:SATableDetails, sessionID: xsd:string) -> table: ns0:SATable
+            getRelatedSubjectAreas(subjectAreaName: xsd:string, includeXSAs: xsd:boolean, sessionID: xsd:string) -> subjectArea: ns0:SASubjectArea[]
+            getSubjectAreas(sessionID: xsd:string) -> subjectArea: ns0:SASubjectArea[]
+            reloadLogConfiguration(logLevel: ns0:LogReloadLevel, domain: ns0:LogReloadDomain, id: xsd:string, sessionID: xsd:string) -> 
+            reloadMetadata(sessionID: xsd:string) -> return: xsd:boolean
+
+Service: ReplicationService
+     Port: ReplicationServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}ReplicationService)
+         Operations:
+            export(filename: xsd:string, filter: ns0:CatalogItemsFilter, flag: ns0:ExportFlags, exportSecurity: xsd:boolean, sessionID: xsd:string) -> 
+            import(filename: xsd:string, flag: ns0:ImportFlags, lastPurgedLog: xsd:dateTime, updateReplicationLog: xsd:boolean, returnErrors: xsd:boolean, filter: ns0:CatalogItemsFilter, pathMap: ns0:PathMap, sessionID: xsd:string) -> error: ns0:ImportError[]
+            markForReplication(item: xsd:string, replicate: xsd:boolean, sessionID: xsd:string) -> 
+            purgeLog(items: xsd:string[], timestamp: xsd:dateTime, sessionID: xsd:string) -> 
+
+Service: ReportEditingService
+     Port: ReportEditingServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}ReportEditingService)
+         Operations:
+            applyReportDefaults(reportRefs: ns0:ReportRef, sessionID: xsd:string) -> reportXml: xsd:string
+            applyReportParams(reportRef: ns0:ReportRef, reportParams: ns0:ReportParams, encodeInString: xsd:boolean, sessionID: xsd:string) -> return: None
+            generateReportSQL(reportRef: ns0:ReportRef, reportParams: ns0:ReportParams, sessionID: xsd:string) -> return: xsd:string
+            getPromptElements(promptRef: ns0:ReportRef, viewState: xsd:string, viewID: xsd:string, portalPath: xsd:string, page: xsd:string, optionalParams: ns0:NameValuePair[], sessionID: xsd:string) -> promptsObj: ns0:PromptsObjectModel
+            getReportColumns(reportRef: ns0:ReportRef, sessionID: xsd:string) -> columns: ns0:ReportColumn[]
+            getReportElements(path: xsd:string, sessionID: xsd:string) -> parameterADF: ns0:ReportADFParameters
+
+Service: ScorecardAssessmentService
+     Port: ScorecardAssessmentServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}ScorecardAssessmentService)
+         Operations:
+            cancelScorecardAssessment(scorecardExecutionID: xsd:string, sessionID: xsd:string) -> return: ns0:ScorecardCancelationStatus
+            closeScorecardAssessment(scorecardExecutionID: xsd:string, sessionID: xsd:string) -> return: ns0:ScorecardCloseStatus
+            executeScorecard(executionOptions: ns0:ScorecardExecutionOptions, scorecardPath: xsd:string, nodeList: ns0:ScorecardNodeList, variableList: ns0:ScorecardVariableList, kpiColumnList: ns0:KPIColumnList, sessionID: xsd:string) -> return: ns0:ScorecardExecutionStatus
+            fetchScorecardAssessment(scorecardExecutionID: xsd:string, sessionID: xsd:string) -> return: ns0:ScorecardExecutionStatus
+            generateKPIDrillTo(scorecardPath: xsd:string, nodeID: xsd:string, nodeType: xsd:string, reportPath: xsd:string, variableList: ns0:ScorecardVariableList, kpiColumnList: ns0:KPIColumnList, isDrillTo: xsd:boolean, sessionID: xsd:string) -> return: ns0:ScorecardGenerateDrillToStatus
+            getScorecardKPIDimensions(scorecardPath: xsd:string, getFresh: xsd:boolean, sessionID: xsd:string) -> return: ns0:ScorecardDimensionReferences
+            getScorecardViewDimensions(type: ns0:ScorecardViewType, scorecardViewPath: xsd:string, scorecardViewXML: xsd:string, sessionID: xsd:string) -> return: ns0:ScorecardDimensionReferences
+
+Service: ScorecardMetadataService
+     Port: ScorecardMetadataServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}ScorecardMetadataService)
+         Operations:
+            addInitiativeNode(scorecardID: xsd:string, initiativeNode: ns0:InitiativeNode, sessionID: xsd:string) -> nodeID: xsd:string, node: ns0:InitiativeNode
+            addPerspective(scorecardID: xsd:string, perspective: ns0:Perspective, sessionID: xsd:string) -> perspectiveID: xsd:string, perspective: ns0:Perspective
+            addScorecardView(scorecardID: xsd:string, scorecardView: ns0:ScorecardView, overwrite: xsd:boolean, sessionID: xsd:string) -> scorecardView: ns0:ScorecardView
+            addStrategyNode(scorecardID: xsd:string, strategyNode: ns0:StrategyNode, sessionID: xsd:string) -> nodeID: xsd:string, node: ns0:StrategyNode
+            closeScorecard(scorecardID: xsd:string, sessionID: xsd:string) -> 
+            createScorecard(name: xsd:string, description: xsd:string, path: xsd:string, rootNodeName: xsd:string, useDefaultPerspectives: xsd:boolean, sessionID: xsd:string) -> scorecardID: xsd:string
+            deleteInitiativeNode(scorecardID: xsd:string, nodeID: xsd:string, removeLinkedObject: xsd:boolean, recursive: xsd:boolean, sessionID: xsd:string) -> nodeID: xsd:string
+            deletePerspective(scorecardID: xsd:string, perspectiveID: xsd:string, sessionID: xsd:string) -> 
+            deleteScorecardView(scorecardID: xsd:string, path: xsd:string, sessionID: xsd:string) -> 
+            deleteStrategyNode(scorecardID: xsd:string, nodeID: xsd:string, removeLinkedObject: xsd:boolean, recursive: xsd:boolean, sessionID: xsd:string) -> nodeID: xsd:string
+            editScorecard(scorecardID: xsd:string, edit: xsd:boolean, sessionID: xsd:string) -> 
+            getScorecardDetails(scorecardID: xsd:string, details: xsd:int, options: ns0:ScorecardDetailsOptions, sessionID: xsd:string) -> scorecardSettings: ns0:ScorecardSettings, perspectives: ns0:PerspectiveList, strategyNodes: ns0:StrategyNodeList, initiativeNodes: ns0:InitiativeNodeList, causeEffectLinkages: ns0:CauseAndEffectLinkages, viewDocuments: ns0:ScorecardViewDocuments
+            openScorecard(path: xsd:string, readWrite: xsd:boolean, sessionID: xsd:string) -> scorecardID: xsd:string
+            openTreeNode(scorecardID: xsd:string, nodeID: xsd:string, type: xsd:string, sessionID: xsd:string) -> ({nodeStrategy: ns0:StrategyNode} | {nodeInitiative: ns0:InitiativeNode})
+            updateCauseAndEffectLinkages(scorecardID: xsd:string, causeEffectLinkages: ns0:CauseAndEffectLinkages, sessionID: xsd:string) -> causeEffectLinkages: ns0:CauseAndEffectLinkages, failedUpdates: ns0:CauseAndEffectLinkagesUpdateFailures
+            updateInitiativeNode(scorecardID: xsd:string, initiativeNode: ns0:InitiativeNode, sessionID: xsd:string) -> node: ns0:InitiativeNode
+            updatePerspective(scorecardID: xsd:string, perspective: ns0:Perspective, sessionID: xsd:string) -> perspective: ns0:Perspective
+            updateScorecardItemACL(scorecardID: xsd:string, type: ns0:ScorecardItemType, path: xsd:string, id: xsd:string, acl: ns0:ACL, options: ns0:UpdateCatalogItemACLParams, sessionID: xsd:string) -> updatedItem: ns0:UpdatedScorecardACLItem[]
+            updateScorecardSettings(scorecardID: xsd:string, scorecardSettings: ns0:ScorecardSettings, sessionID: xsd:string) -> 
+            updateScorecardView(scorecardID: xsd:string, scorecardView: ns0:ScorecardView, sessionID: xsd:string) -> scorecardView: ns0:ScorecardView
+            updateStrategyNode(scorecardID: xsd:string, strategyNode: ns0:StrategyNode, sessionID: xsd:string) -> node: ns0:StrategyNode
+
+Service: AnalysisExportViewsService
+     Port: AnalysisExportViewsServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}AnalysisExportViewsService)
+         Operations:
+            completeAnalysisExport(queryID: xsd:string, sessionID: xsd:string) -> return: ns0:AnalysisExportResult
+            initiateAnalysisExport(report: ns0:ReportRef, outputFormat: ns0:AnalysisExportOutputFormat, executionOptions: ns0:AnalysisExportExecutionOptions, reportParams: ns0:ReportParams, reportViewName: xsd:string, sessionID: xsd:string) -> return: ns0:AnalysisExportResult
+
+Service: MultiTenancyManagementService
+     Port: MultiTenancyManagementServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}MultiTenancyManagementService)
+         Operations:
+            archiveTenant(tenantID: xsd:string[], useMtom: xsd:boolean, sessionID: xsd:string) -> archive: xsd:base64Binary
+            archiveTenantEx(archiveOptions: ns0:ArchiveOptions, useMtom: xsd:boolean, sessionID: xsd:string) -> archive: xsd:base64Binary
+            clearRoleHierarchyCache(sessionID: xsd:string) -> 
+            provisionServiceInstance(serviceInstanceConfigParams: ns0:ServiceInstanceConfigParams[], sessionID: xsd:string) -> 
+            provisionTenant(tenantID: xsd:string[], sessionID: xsd:string) -> 
+            restoreTenant(archive: xsd:base64Binary, tenantID: xsd:string[], sessionID: xsd:string) -> 
+            restoreTenantEx(archive: xsd:base64Binary, restoreOptions: ns0:RestoreOptions, sessionID: xsd:string) -> 
+            unarchiveTenant(archive: xsd:base64Binary, tenantID: xsd:string[], sessionID: xsd:string) -> 
+            unprovisionServiceInstance(serviceInstanceID: xsd:string[], sessionID: xsd:string) -> 
+            unprovisionTenant(tenantID: xsd:string[], sessionID: xsd:string) -> 
+            updateServiceInstance(serviceInstanceConfigParams: ns0:ServiceInstanceConfigParams, sessionID: xsd:string) -> 
+
+Service: SchedulerService
+     Port: SchedulerServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}SchedulerService)
+         Operations:
+            cancelJobInstance(jobReference: xsd:unsignedInt, jobInstanceReference: xsd:unsignedLong, sessionID: xsd:string) -> cancelJobInstanceResponse: xsd:boolean
+            deleteService(sessionID: xsd:string) -> agentsDeleted: xsd:unsignedInt
+            exportService(exportFile: xsd:string, sessionID: xsd:string) -> agentsExported: xsd:unsignedInt
+            getJob(jobReference: xsd:unsignedInt, sessionID: xsd:string) -> job: ns0:Job
+            getJobInstance(jobReference: xsd:unsignedInt, jobInstanceReference: xsd:unsignedLong, sessionID: xsd:string) -> jobInstance: ns0:JobInstance
+            getJobInstanceReferences(jobInstanceFilter: ns0:JobInstanceFilter, sessionID: xsd:string) -> jobReferenceAndInstanceReferences: ns0:JobReferenceAndInstanceReferences[]
+            getJobReferences(jobFilter: ns0:JobFilter, sessionID: xsd:string) -> jobReference: xsd:unsignedInt[]
+            importService(importFile: xsd:string, sessionID: xsd:string) -> agentsImported: xsd:unsignedInt, agentsDeleted: xsd:unsignedInt
+            purgeJobInstances(purgeJobInstancesFilter: ns0:PurgeJobInstancesFilter, sessionID: xsd:string) -> 
+            removeJobs(jobReference: xsd:unsignedInt[], sessionID: xsd:string) -> numberJobsRemoved: xsd:unsignedInt
+            resetService(deleteHistory: xsd:boolean, jobState: ns0:JobState, sessionID: xsd:string) -> 
+            resumeJobs(jobReference: xsd:unsignedInt[], sessionID: xsd:string) -> succeeded: ns0:JobReferences, failed: ns0:JobReferenceErrors
+            resumeService(catchUp: xsd:boolean, sessionID: xsd:string) -> 
+            setConsecutiveFailureLimit(consecutiveFailureLimit: xsd:unsignedInt, sessionID: xsd:string) -> 
+            suspendJobs(jobReference: xsd:unsignedInt[], sessionID: xsd:string) -> succeeded: ns0:JobReferences, failed: ns0:JobReferenceErrors
+            suspendService(timeoutSecs: xsd:unsignedInt, sessionID: xsd:string) -> 
+
+Service: UserPersonalizationService
+     Port: UserPersonalizationServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}UserPersonalizationService)
+         Operations:
+            addFavorite(catalogObjectPath: xsd:string, categoryPath: xsd:string, sessionID: xsd:string) -> 
+            addFavoriteCategory(categoryName: xsd:string, categoryPath: xsd:string, sessionID: xsd:string) -> 
+            deleteFavorite(catalogObjectPath: xsd:string, categoryPath: xsd:string, sessionID: xsd:string) -> 
+            deleteFavoriteCategory(categoryPath: xsd:string, sessionID: xsd:string) -> 
+            getFavorites(categoryPath: xsd:string, recursive: xsd:boolean, categoriesOnly: xsd:boolean, sessionID: xsd:string) -> favoriteItem: ns0:FavoriteItem[]
+            getMostRecents(listType: xsd:unsignedShort, sessionID: xsd:string) -> listItem: ns0:MRUItem[]
+            updateFavorites(favoriteItem: ns0:FavoriteItem[], sessionID: xsd:string) -> 
+            updateMostRecents(catalogObjectPath: xsd:string, actionType: ns0:ActionType, sessionID: xsd:string) -> 
+
+Service: AdministrationService
+     Port: SAWAdministrationServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}AdministrationService)
+         Operations:
+            deleteCSPWhitelist(sessionID: xsd:string) -> 
+            getCSPDefaultAllowList(sessionID: xsd:string) -> resultCSPHeader: xsd:string
+            getCSPWhitelist(sessionID: xsd:string) -> resultXml: xsd:string
+            reloadLogConfiguration(logLevel: ns0:LogReloadLevel, domain: ns0:LogReloadDomain, id: xsd:string, sessionID: xsd:string) -> 
+            updateCSPWhitelist(cspWhitelistXml: xsd:string, sessionID: xsd:string) -> 
+
+Service: BulkDataExportService
+     Port: BulkDataExportServiceSoap (Soap11Binding: {urn://oracle.bi.webservices/v12}BulkDataExportService)
+         Operations:
+            cancelQuery(queryID: xsd:string, sessionID: xsd:string) -> 
+            executeBulkDataAnalysisExport(report: ns0:ReportRef, outputFormat: ns0:BulkDataExportOutputFormat, executionOptions: ns0:BulkDataExportExecutionOptions, reportParams: ns0:ReportParams, sessionID: xsd:string) -> return: ns0:BulkDataExportResult
+            executeBulkDataSQLExport(sql: xsd:string, outputFormat: ns0:BulkDataExportOutputFormat, executionOptions: ns0:BulkDataExportExecutionOptions, sessionID: xsd:string) -> return: ns0:BulkDataExportResult
+            fetchNextBulkData(queryID: xsd:string, maxRowsPerPage: xsd:int, sessionID: xsd:string) -> return: ns0:BulkDataExportResult
+
