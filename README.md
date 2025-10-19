@@ -1,6 +1,6 @@
 # oas_webservices
 
-This repository contains examples and sample code related to using Oracle Analytics Server and Oracle Analytics Cloud Web Services.
+This repository contains examples and sample code related to using Oracle Analytics Server and Oracle Analytics Cloud Web Services using Python.
 
 All examples utilize [Zeep](https://docs.python-zeep.org/en/master/) as the SOAP client. Please consult the Zeep documentation if you have questions about how to use this library.
 
