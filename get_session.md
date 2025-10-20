@@ -22,7 +22,7 @@ The bind function is used because the OA WSDL provides multiple services, all of
 ```xml
 <wsdl:service xmlns:xmime="http://www.w3.org/2005/05/xmlmime" name="<servicename>">
     <wsdl:port binding="sawsoap:<servicename>" name="<servicename>Soap">
-        <soap:address location="http://celvpvm05514.us.oracle.com:9502/analytics-ws/saw.dll?SoapImpl=<servicename>"/>
+        <soap:address location="http://<host>:<port>/analytics-ws/saw.dll?SoapImpl=<servicename>"/>
     </wsdl:port>
 </wsdl:service>
 ```
