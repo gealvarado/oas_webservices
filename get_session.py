@@ -1,3 +1,9 @@
+##
+## DISCLAIMER:
+## This code is distributed free for demonstrative purposes only.  
+## It is neither maintained nor supported by Oracle as a licensed product.
+##
+
 import argparse
 import logging
 
