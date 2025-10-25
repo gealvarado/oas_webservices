@@ -26,6 +26,7 @@ The results are saved in a CSV file, with each row containing the path to the an
   - `argparse`, `csv`, `xml`, `logging` (bundled with Python standard library)
 
 Install dependencies if needed:
+
 ```sh
 pip install zeep
 ```
