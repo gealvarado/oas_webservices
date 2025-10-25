@@ -25,6 +25,18 @@ ch.setFormatter(formatter)
 logger.addHandler(ch)
 
 def initialize_service(host, port, use_ssl, service):
+    """
+    Initializes and returns a Zeep SOAP service binding for Oracle Analytics.
+
+    Args:
+        host (str): Host address of the analytics server.
+        port (int): Port number for the server.
+        use_ssl (bool): If True, use HTTPS; otherwise HTTP.
+        service (str): Name of the SOAP service to bind.
+
+    Returns:
+        zeep.proxy.OperationProxy: The bound SOAP service object.
+    """
     oaswsdl = f"http{'s' if use_ssl else ''}://{host}:{port}/analytics-ws/saw.dll/wsdl/v12"
     logger.debug(f"WSDL URL: {oaswsdl}")
     settings = Settings(strict=False, xml_huge_tree=True)
@@ -33,6 +45,13 @@ def initialize_service(host, port, use_ssl, service):
     return service 
                           
 def main(args):
+    """
+    Connects to Oracle Analytics using the provided arguments, logs in with the given credentials,
+    retrieves a session ID to verify authentication, then logs out and reports the results.
+
+    Args:
+        args (Namespace): Parsed command-line arguments.
+    """
     logger.info("Starting")
     logger.debug(f"Host: {args.host}, Port: {args.port}, Username: {args.username}")
     #Initialize the session service
