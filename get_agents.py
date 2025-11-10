@@ -223,7 +223,6 @@ def main(args):
         if args.details:
             agents_details = get_agents_details(catalog_service, session_id, agents)
         logger.debug(f"Agents Details: {agents_details}")
-        # agents_xml = get_agents_xml(catalog_service, session_id, agents)
         #Write to CSV
         write_status_to_csv(agents_status, agents_details, output_file=args.output_file)
         #Log off 
