@@ -136,13 +136,13 @@ def create_backup_directory(backup_path, timestamp):
 
 def backup_agent(catalogService, sessionID, agent_path, backup_path):
     """
-    Creates a backup of the specified agent (iBot) by exporting its XML to a file.
+    Creates a backup of the specified agent (iBot).
 
     Args:
         catalogService: The WebCatalogService SOAP proxy.
         sessionID (str): The current session ID.
         agent_path (str): The catalog path of the agent to back up.
-        backup_path (str): The file path to save the backup XML.
+        backup_path (str): The file path to save the backup.
     """
     try:
         file_path = backup_path + os.path.dirname(agent_path)
