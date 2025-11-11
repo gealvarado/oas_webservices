@@ -211,3 +211,9 @@ __marimo__/
 
 # VS Code
 .vscode/
+
+# OSX stuff
+.DS_Store
+
+# backup directories
+backup*/
